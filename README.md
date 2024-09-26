@@ -238,14 +238,14 @@ x %= 7; // 2 (x = x % 7)
 
 Comparison operators are used to compare two values and return a boolean (true or false).
 
-==: Equal to (compares values after type conversion)
-===: Strict equal (compares both value and type)
-!=: Not equal to
-!==: Strict not equal
->: Greater than
-<: Less than
->=: Greater than or equal to
-<=: Less than or equal to
++ ==: Equal to (compares values after type conversion)
++ ===: Strict equal (compares both value and type)
++ !=: Not equal to
++ !==: Strict not equal
++ >: Greater than
++ <: Less than
++ >=: Greater than or equal to
++ <=: Less than or equal to
 
 
 ### Example:
@@ -255,12 +255,12 @@ let b = '10';
 
 console.log(a == b); // true (value is the same after type conversion)
 console.log(a === b); // false (strict comparison checks type)
-Logical Operators
+### Logical Operators
 Logical operators are used to combine conditional statements.
 
-&&: Logical AND (returns true if both operands are true)
-||: Logical OR (returns true if at least one operand is true)
-!: Logical NOT (inverts the truth value)
++ &&: Logical AND (returns true if both operands are true)
++ ||: Logical OR (returns true if at least one operand is true)
++ !: Logical NOT (inverts the truth value)
 ```
 ### Example:
 ```
