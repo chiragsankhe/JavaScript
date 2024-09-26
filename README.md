@@ -142,7 +142,7 @@ let person = {
     rating  : 4.5,
     color : "red, blue",
     mrp : 10 
-   }
+     }
  console.log(product);
  ```
 2. create a const call "proflile"
@@ -153,7 +153,7 @@ followers : "145K",
 following : 2000,
 post : 555,
 message : "always smile"
-}
+  }
 console.log(profile);
 ```
 
