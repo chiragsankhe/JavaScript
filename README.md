@@ -317,19 +317,169 @@ if (score >= 90) {
   console.log("Fail");
 }
 ```
+### conditinal question prac
+1. prac
+```
+let age = 21;
+
+if(age > 18 )
+    {
+        console.log("you can vote");
+        
+    }
+    else{
+        console.log("you are not able to vote");
+    }
+```
+
+     practice question 2
+```
+    let wather = "moon";
+    let color;
+
+    if(wather == "sunny")
+        {
+            color="yello";
+        }
+        else{
+            color = "white";
+        }
+
+        console.log(color);
+```
+        practice question 3
+```
+        let x = 1;
+
+        if(x%2 == 0 )
+            {
+                console.log("x is even no ");
+
+            }
+            else{
+                console.log("odd no ");
+            }
+
+```
+            practice question 4
+```
+            let age2 = 23;
+
+            if(age2 <18)
+                {
+                    console.log("junior");
+                }
+                else if (age2>18 & age2<29) {
+                    console.log("senior");
+
+                }
+                else
+                {
+                    console.log("married");;
+                }
+```
+                 practice question 5
+```
+                let name = "chirag";
+               let result =  name =="prachi" ? " true" : "false";
+
+               console.log(result);
+```
+  ###  switch statement 
+```
+            let grade = "B";
+            let result2;
+
+            switch (grade)
+            {
+                case 'A':
+                result2 = "marks >90";
+                break;
+
+
+                case 'B':
+                    result2 = "markas > 80";
+                    break;
+
+                    case 'c':
+                    result2 = "markas > 70";
+                    break;
+
+                    default:
+                        result2 = "less than 70";
+            }
+
+            console.log(result2);
+```
+
 ### MDN Docs (Mozilla Developer Network)
 MDN Web Docs is a comprehensive resource for web developers, providing detailed documentation and tutorials on JavaScript, HTML, CSS, and more. It is often referred to for accurate and up-to-date information on web technologies. You can access JavaScript documentation on MDN here: MDN JavaScript Docs
 
 MDN is widely considered one of the best resources for learning JavaScript, as it covers:
 
-Syntax
-Functions
-Operators
-Objects and arrays
-ES6 and newer features
-Browser-specific APIs
-Feel free to explore MDN to get in-depth knowledge and examples!
++ Syntax
++ Functions
++ Operators
++ Objects and arrays
++ ES6 and newer features
++ Browser-specific APIs
++ Feel free to explore MDN to get in-depth knowledge and examples!
 
+
+       
+## practice question 2
+
+1. get user to input a number using promt (" enter a number "). check if the number id a multiplr of 5 or not
+   ```
+            let roll_no = prompt("enter a no"  ) ;
+
+            if(roll_no % 5 == 0)
+                {
+                    
+                    console.log("roll_no is multipal of 5");
+                }
+                else {
+                    console.log("roll_no is not  multipal of 5");
+                }
+```
+           _______________________ 2 __________________
+2. write a code which can give you gredes to student according to score;
+```
+                  let scores = prompt("enter your scores:");
+                 let grades ;
+
+                 
+
+                    if (scores>=80 & scores<=100){
+                        grades = "A";
+                    }
+
+                    
+                    
+                    else if (scores>=70 & scores<=79)
+                    {
+                        grades = "B";
+
+                    }
+                    else if (scores>=60 & scores<=69)
+                {
+                    grades = "C";
+
+                }
+                     else if (scores>=50 & scores<=59)
+                     {
+                        grades = "D";
+
+                     }
+                     else
+                     {
+                        grades = "F";
+
+                     }
+
+                 console.log(grades);
+```
+              
 
 
 
