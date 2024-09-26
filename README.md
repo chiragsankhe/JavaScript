@@ -484,7 +484,7 @@ MDN is widely considered one of the best resources for learning JavaScript, as i
 ## Loops in JavaScript
 Loops in JavaScript allow us to repeatedly execute a block of code until a certain condition is met.
 
-1. for Loop
++ for Loop
 The for loop is commonly used when you know how many times you want to iterate.
 
 Syntax:
@@ -500,7 +500,7 @@ for (let i = 0; i < 5; i++) {
 }
 // Output: 0, 1, 2, 3, 4
 ```
-2. while Loop
++ while Loop
 The while loop repeats a block of code as long as a specified condition is true.
 
 Syntax:
@@ -518,7 +518,7 @@ while (i < 5) {
 }
 // Output: 0, 1, 2, 3, 4
 ```
-3. do-while Loop
++ do-while Loop
 The do-while loop is similar to the while loop, but it executes the code block at least once before checking the condition.
 
 Syntax:
@@ -536,7 +536,7 @@ do {
 } while (i < 5);
 // Output: 0, 1, 2, 3, 4
 ```
-4. for-of Loop
++ for-of Loop
 The for-of loop is used to iterate over the elements of iterable objects like arrays or strings.
 
 Syntax:
@@ -553,7 +553,7 @@ for (let fruit of fruits) {
 }
 // Output: Apple, Banana, Orange
 ```
-5. for-in Loop
++ for-in Loop
 The for-in loop is used to iterate over the properties of an object (keys or indices).
 
 Syntax:
@@ -562,7 +562,7 @@ for (key in object) {
   // Code to execute
 }
 ```
-###Example (Object):
+### Example (Object):
 ```
 let person = { name: "John", age: 30 };
 for (let key in person) {
@@ -599,7 +599,7 @@ let multiline = `This is
 a multiline
 string.`;
 ```
-##String Methods in JavaScript
+## String Methods in JavaScript
 There are many useful string methods in JavaScript. Some commonly used ones are:
 
 + length: Returns the length of the string.
