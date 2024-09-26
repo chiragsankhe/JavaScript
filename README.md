@@ -252,7 +252,7 @@ Comparison operators are used to compare two values and return a boolean (true o
 ```
 let a = 10;
 let b = '10';
-
+```
 console.log(a == b); // true (value is the same after type conversion)
 console.log(a === b); // false (strict comparison checks type)
 ### Logical Operators
@@ -261,7 +261,7 @@ Logical operators are used to combine conditional statements.
 + &&: Logical AND (returns true if both operands are true)
 + ||: Logical OR (returns true if at least one operand is true)
 + !: Logical NOT (inverts the truth value)
-```
+
 ### Example:
 ```
 let a = true;
