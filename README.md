@@ -158,6 +158,185 @@ const profile = {
 console.log(profile);
 ```
 
+## operators and conditional statement 
+
+####Comments in JavaScript
+Comments are used to explain code and make it more readable. JavaScript provides two types of comments:
+
+### Single-line comments:
+Start with // and continue to the end of the line.
+```
+ This is a single-line comment
+let x = 5; // Another single-line comment
+```
+### Multi-line comments:
+Start with /* and end with */. They can span multiple lines.
+```
+/* 
+This is a multi-line comment.
+It can be used to explain more complex code. 
+*/
+let y = 10;
+```
+## Arithmetic Operators
+Arithmetic operators are used to perform arithmetic on numbers.
+
++: Addition
+-: Subtraction
+*: Multiplication
+/: Division 
+%: Modulus (remainder)
+**: Exponentiation (ES6)
+## Example:
+```
+let a = 10;
+let b = 5;
+let sum = a + b; // 15
+let product = a * b; // 50
+let remainder = a % b; // 0
+let power = a ** 2; // 100 (10 squared)
+```
+### Unary Operators
+Unary operators operate on a single operand.
+
+## Increment (++): 
+Increases a variable by 1.
+## Decrement (--):
+Decreases a variable by 1.
+## Unary negation (-): 
+Negates the value.
+## Unary plus (+): 
+Tries to convert a non-number into a number.
+### Example:
+```
+let x = 5;
+x++; // 6 (post-increment)
+++x; // 7 (pre-increment)
+
+let y = -x; // -7 (unary negation)
+let z = +"123"; // 123 (convert string to number)
+```
+## Assignment Operators
+Assignment operators are used to assign values to variables.
+
+=: Basic assignment
++=: Add and assign
+-=: Subtract and assign
+*=: Multiply and assign
+/=: Divide and assign
+%=: Modulus and assign
+**=: Exponent and assign (ES6)
+
+### Example:
+```
+let x = 10;
+x += 5; // 15 (x = x + 5)
+x *= 2; // 30 (x = x * 2)
+x %= 7; // 2 (x = x % 7)
+```
+## Comparison Operators
+
+Comparison operators are used to compare two values and return a boolean (true or false).
+
+==: Equal to (compares values after type conversion)
+===: Strict equal (compares both value and type)
+!=: Not equal to
+!==: Strict not equal
+>: Greater than
+<: Less than
+>=: Greater than or equal to
+<=: Less than or equal to
+
+
+### Example:
+```
+let a = 10;
+let b = '10';
+
+console.log(a == b); // true (value is the same after type conversion)
+console.log(a === b); // false (strict comparison checks type)
+Logical Operators
+Logical operators are used to combine conditional statements.
+
+&&: Logical AND (returns true if both operands are true)
+||: Logical OR (returns true if at least one operand is true)
+!: Logical NOT (inverts the truth value)
+```
+### Example:
+```
+let a = true;
+let b = false;
+
+console.log(a && b); // false
+console.log(a || b); // true
+console.log(!a); // false
+```
+### Ternary (Conditional) Operator
+The ternary operator is a shorthand for if-else statements.
+
+Syntax:
+### condition ? expression_if_true : expression_if_false;
+
+### Example:
+
+```
+let age = 18;
+let isAdult = (age >= 18) ? "Adult" : "Not an adult";
+console.log(isAdult); // Adult
+```
+## Conditional Statements
+### if Statement
+The if statement is used to execute a block of code only if a specified condition is true.
+```
+let age = 18;
+if (age >= 18) {
+  console.log("You are an adult.");
+}
+```
+###  if-else Statement
+The if-else statement adds an alternative block of code to execute if the condition is false.
+```
+let age = 16;
+if (age >= 18) {
+  console.log("You are an adult.");
+} else {
+  console.log("You are a minor.");
+}
+```
+### else-if Statement
+The else-if statement allows you to specify multiple conditions. It is used when you have more than two possible outcomes.
+```
+let score = 85;
+if (score >= 90) {
+  console.log("A grade");
+} else if (score >= 80) {
+  console.log("B grade");
+} else if (score >= 70) {
+  console.log("C grade");
+} else {
+  console.log("Fail");
+}
+```
+### MDN Docs (Mozilla Developer Network)
+MDN Web Docs is a comprehensive resource for web developers, providing detailed documentation and tutorials on JavaScript, HTML, CSS, and more. It is often referred to for accurate and up-to-date information on web technologies. You can access JavaScript documentation on MDN here: MDN JavaScript Docs
+
+MDN is widely considered one of the best resources for learning JavaScript, as it covers:
+
+Syntax
+Functions
+Operators
+Objects and arrays
+ES6 and newer features
+Browser-specific APIs
+Feel free to explore MDN to get in-depth knowledge and examples!
+
+
+
+
+
+
+
+
 
 
 
