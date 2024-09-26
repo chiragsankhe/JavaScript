@@ -23,103 +23,106 @@ var: The oldest way to declare variables. Variables declared with var are functi
 ---
 var x = 10;
 var x = 20; // Re-declaration allowed with var
----
+
 + let:
   Introduced in ES6 (ES2015), let is block-scoped (i.e., within {}), meaning it is only accessible within the block where it is defined. Variables declared with let can be updated but not re-declared within the same scope.
 
----
+```
 let y = 10;
 y = 20; // Allowed
----
+```
+
 let y = 30; // Error: Cannot redeclare variable 'y'
+
 + const: Used to declare variables that cannot be re-assigned. Like let, const is also block-scoped. It must be initialized during declaration and cannot be updated afterward. However, objects and arrays declared with const can still have their properties or elements modified.
----
+  ```
 const z = 10;
 z = 20; // Error: Cannot re-assign a constant variable
----
+```
 #### Data Types in JavaScript
 JavaScript has various data types that are divided into two categories: Primitive and Non-Primitive (Reference types).
 
 ##### 1. Primitive Data Types
 + Number:
   Represents both integer and floating-point numbers.
----
+```
 let num = 10;
 let floatNum = 10.5;
----
+```
 + String:
    A sequence of characters, enclosed in single ('), double ("), or backticks (`).
----
+```
 let name = 'John';
 let greeting = `Hello, ${name}`; // Template literal
----
+```
 + Boolean: Represents true or false.
----
+```
 let isTrue = true;
 let isFalse = false;
----
+```
 + Undefined:
    A variable that has been declared but not assigned a value.
----
+```
 let a;
 console.log(a); // Output: undefined
----
+```
 + Null: Represents the intentional absence of any object value.
----
+```
 let emptyValue = null;
----
+```
 + Symbol:
    A unique and immutable primitive value, often used for object property keys.
----
+```
 let symbol = Symbol('description');
----
+```
 + BigInt: Allows safe representation of integers beyond the Number type's safe limit.
----
+```
 let bigNum = BigInt(12345678901234567890);
----
+```
 ##### 2. Non-Primitive Data Types (Reference types)
+
 + Object: An unordered collection of key-value pairs.
----
+```
 let person = {
   name: 'John',
   age: 25
 };
----
+```
 + Array: A list-like object used to store multiple values.
----
+```
 let fruits = ['Apple', 'Banana', 'Orange'];
----
+```
 
 + Function: A block of code designed to perform a specific task.
----
+```
 function greet() {
   return 'Hello!';
 }
----
+```
 + Date: Represents dates and times.
-  ---
+  ```
 let today = new Date();
----
----
+```
+```
 // Variable Declaration with let, const, and var
 var x = 10; // globally scoped or function-scoped
 let y = 20; // block-scoped
 const z = 30; // block-scoped and cannot be reassigned
----
----
+```
+```
 // Data types in JavaScript
 let name = 'John'; // String
 let age = 25; // Number
 let isStudent = true; // Boolean
 let address; // Undefined
 let score = null; // Null
----
----
+```
+```
 // Object and Array (Non-Primitive)
 let person = {
   firstName: 'John',
   lastName: 'Doe'
 };
----
+```
 
-let fruits = ['Apple', 'Banana', 'Orange'];
+
