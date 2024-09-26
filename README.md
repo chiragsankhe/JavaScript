@@ -479,3 +479,224 @@ MDN is widely considered one of the best resources for learning JavaScript, as i
 
                  console.log(grades);
 ```
+
+
+## Loops in JavaScript
+Loops in JavaScript allow us to repeatedly execute a block of code until a certain condition is met.
+
+1. for Loop
+The for loop is commonly used when you know how many times you want to iterate.
+
+Syntax:
+```
+for (initialization; condition; increment) {
+  // Code to execute
+}
+```
+### Example:
+```
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+// Output: 0, 1, 2, 3, 4
+```
+2. while Loop
+The while loop repeats a block of code as long as a specified condition is true.
+
+Syntax:
+```
+while (condition) {
+  // Code to execute
+}
+```
+### Example:
+```
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+// Output: 0, 1, 2, 3, 4
+```
+3. do-while Loop
+The do-while loop is similar to the while loop, but it executes the code block at least once before checking the condition.
+
+Syntax:
+```
+do {
+  // Code to execute
+} while (condition);
+```
+### Example:
+```
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+// Output: 0, 1, 2, 3, 4
+```
+4. for-of Loop
+The for-of loop is used to iterate over the elements of iterable objects like arrays or strings.
+
+Syntax:
+```
+for (element of iterable) {
+  // Code to execute
+}
+```
+### Example:
+```
+let fruits = ['Apple', 'Banana', 'Orange'];
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+// Output: Apple, Banana, Orange
+```
+5. for-in Loop
+The for-in loop is used to iterate over the properties of an object (keys or indices).
+
+Syntax:
+```
+for (key in object) {
+  // Code to execute
+}
+```
+###Example (Object):
+```
+let person = { name: "John", age: 30 };
+for (let key in person) {
+  console.log(`${key}: ${person[key]}`);
+}
+// Output: name: John, age: 30
+```
+### Example (Array - not commonly used for arrays):
+```
+let arr = ['A', 'B', 'C'];
+for (let index in arr) {
+  console.log(index); // Outputs index numbers: 0, 1, 2
+}
+```
+## Strings in JavaScript
+Strings in JavaScript are sequences of characters used to represent text.
+
+### Example:
+```
+let greeting = "Hello, World!";
+```
+### Template Literals
+Template literals (introduced in ES6) allow for embedding expressions within strings using backticks (`) and ${expression}.
+
+### Example:
+```
+let name = "John";
+let message = `Hello, ${name}! How are you?`;
+console.log(message); // Output: Hello, John! How are you?
+```
+Template literals also allow multi-line strings:
+```
+let multiline = `This is
+a multiline
+string.`;
+```
+##String Methods in JavaScript
+There are many useful string methods in JavaScript. Some commonly used ones are:
+
++ length: Returns the length of the string.
+```
+let str = "Hello";
+console.log(str.length); // 5
+```
++ toUpperCase() / toLowerCase(): Converts the string to uppercase or lowercase.
+```
+console.log(str.toUpperCase()); // HELLO
+console.log(str.toLowerCase()); // hello
+```
++ charAt(index): Returns the character at the specified index.
+```
+console.log(str.charAt(0)); // H
+```
++ includes(substring): Checks if the string contains the specified substring.
+```
+console.log(str.includes("ell")); // true
+```
++ indexOf(substring): Returns the index of the first occurrence of the substring. Returns -1 if not found.
+```
+console.log(str.indexOf("l")); // 2
+```
++ slice(start, end): Extracts a section of a string and returns it as a new string.
+```
+let part = str.slice(1, 4); // "ell"
+```
++ replace(searchValue, newValue): Replaces the first match of a substring with a new value.
+```
+let newStr = str.replace("Hello", "Hi"); // "Hi"
+```
++ split(separator): Splits the string into an array of substrings.
+```
+let words = str.split(" "); // ["Hello"]
+```
+# Practice
+### Example of Loops:
+
++ For loop to print numbers 0 to 4
+ ```
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
+
++ While loop to print numbers 0 to 4
+```
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+```
++ Do-while loop to print numbers 0 to 4
+```
+let j = 0;
+do {
+  console.log(j);
+  j++;
+} while (j < 5);
+```
+
++ For-of loop to iterate over an array
+```
+let fruits = ['Apple', 'Banana', 'Orange'];
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+```
+
++ For-in loop to iterate over an object's properties
+```
+let person = { name: "John", age: 30 };
+for (let key in person) {
+  console.log(`${key}: ${person[key]}`);
+}
+```
+## Example of Strings:
+```
+let name = "John";
+let greeting = `Hello, ${name}!`; // Template literal
+console.log(greeting); // Output: Hello, John!
+```
+```
+let str = "JavaScript is awesome!";
+console.log(str.length); // 22
+console.log(str.toUpperCase()); // JAVASCRIPT IS AWESOME!
+console.log(str.includes("awesome")); // true
+console.log(str.slice(0, 10)); // "JavaScript"
+You can use these string methods and loops in your JavaScript practice to manipulate data effectively!
+
+```
+
+
+
+
+
+
+
