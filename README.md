@@ -136,24 +136,27 @@ let person = {
 ## pratice question
 
 1. crete a const object called "product " to store information shown in the pichure (pen)
-``` const product = {
+```
+const product = {
     product_name :"cello",
     rating  : 4.5,
     color : "red, blue",
     mrp : 10 
      }
-   console.log(product); ```
+   console.log(product);
+```
 
-3. create a const call "proflile"
+2. create a const call "proflile"
 ```
 const profile = {
-user_name : "chirag sankhe ",
-followers : "145K",
-following : 2000,
-post : 555,
-message : "always smile"
+  user_name : "chirag sankhe ",
+  followers : "145K",
+  following : 2000,
+  post : 555,
+  message : "always smile"
   }
-console.log(profile); ```
+console.log(profile);
+```
 
 
 
