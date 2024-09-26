@@ -273,10 +273,10 @@ console.log(!a); // false
 ```
 ### Ternary (Conditional) Operator
 The ternary operator is a shorthand for if-else statements.
-
+```
 Syntax:
-### condition ? expression_if_true : expression_if_false;
-
+ condition ? expression_if_true : expression_if_false;
+```
 ### Example:
 
 ```
@@ -318,7 +318,7 @@ if (score >= 90) {
 }
 ```
 ### conditinal question prac
-1. prac
++ pratice question 1
 ```
 let age = 21;
 
@@ -332,7 +332,8 @@ if(age > 18 )
     }
 ```
 
-     practice question 2
+ + practice question 2
+    
 ```
     let wather = "moon";
     let color;
@@ -429,8 +430,8 @@ MDN is widely considered one of the best resources for learning JavaScript, as i
        
 ## practice question 2
 
-1. get user to input a number using promt (" enter a number "). check if the number id a multiplr of 5 or not
-   ```
+  + get user to input a number using promt (" enter a number "). check if the number id a multiplr of 5 or not
+```
             let roll_no = prompt("enter a no"  ) ;
 
             if(roll_no % 5 == 0)
@@ -441,9 +442,8 @@ MDN is widely considered one of the best resources for learning JavaScript, as i
                 else {
                     console.log("roll_no is not  multipal of 5");
                 }
-```
-           _______________________ 2 __________________
-2. write a code which can give you gredes to student according to score;
+```           
+  + write a code which can give you gredes to student according to score;
 ```
                   let scores = prompt("enter your scores:");
                  let grades ;
@@ -479,14 +479,3 @@ MDN is widely considered one of the best resources for learning JavaScript, as i
 
                  console.log(grades);
 ```
-              
-
-
-
-
-
-
-
-
-
-
