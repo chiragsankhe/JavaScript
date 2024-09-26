@@ -144,7 +144,7 @@ let person = {
     mrp : 10 
      }
  console.log(product);
- ```
+
 2. create a const call "proflile"
 ```
 const profile ={
@@ -155,7 +155,7 @@ post : 555,
 message : "always smile"
   }
 console.log(profile);
-```
+
 
 
 
