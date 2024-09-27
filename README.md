@@ -199,13 +199,13 @@ let power = a ** 2; // 100 (10 squared)
 ### Unary Operators
 Unary operators operate on a single operand.
 
-## Increment (++): 
++ Increment (++): 
 Increases a variable by 1.
-## Decrement (--):
++ Decrement (--):
 Decreases a variable by 1.
-## Unary negation (-): 
++ Unary negation (-): 
 Negates the value.
-## Unary plus (+): 
++ Unary plus (+): 
 Tries to convert a non-number into a number.
 ### Example:
 ```
@@ -331,7 +331,6 @@ if(age > 18 )
         console.log("you are not able to vote");
     }
 ```
-
  + practice question 2
     
 ```
@@ -348,7 +347,7 @@ if(age > 18 )
 
         console.log(color);
 ```
-        practice question 3
++ practice question 3
 ```
         let x = 1;
 
@@ -362,7 +361,7 @@ if(age > 18 )
             }
 
 ```
-            practice question 4
++ practice question 4
 ```
             let age2 = 23;
 
@@ -379,7 +378,7 @@ if(age > 18 )
                     console.log("married");;
                 }
 ```
-                 practice question 5
+ + practice question 5
 ```
                 let name = "chirag";
                let result =  name =="prachi" ? " true" : "false";
