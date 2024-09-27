@@ -1466,13 +1466,180 @@ After removal, getAttribute('alt') returns null because the attribute no longer 
 + `setAttribute()` adds or modifies the value of an attribute.
 + `removeAttribute()` deletes an attribute from an element, making it as if that attribute never existed.
 
+## Accessing and Manipulating the Inline Style of an Element
+You can access an element's inline styles through the style property. This allows direct manipulation of CSS properties.
+
+Example:
+```
+const element = document.getElementById('myElement');
+element.style.color = 'blue'; // Change text color
+element.style.backgroundColor = 'yellow'; // Change background color
+element.style.margin = '10px'; // Set margin
+```
+### Changing CSS Properties Using JavaScript
+To modify CSS properties dynamically, you can manipulate the element’s style attribute, as shown below.
+
+Example:
+```
+const element = document.querySelector('.myClass');
+element.style.border = '1px solid black'; // Set border property
+element.style.fontSize = '20px'; // Set font size
+```
+
+## Adding and Positioning Elements in the DOM
+You can add new elements to the DOM and position them relative to existing elements using methods such as
+
++ append():
+   Adds new content to the end of an element’s children.
++ prepend():
+  Adds new content to the beginning of an element’s children.
++ before():
+  Inserts new content immediately before the target element.
++ after():
+  Inserts new content immediately after the target element.
 
 
 
+1. `append()`: Adds Content at the End of the Target Element
+The append() method is used to insert content at the end of the target element's children. It can append text, HTML, or other DOM elements.
 
+Example:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append() Example</title>
+</head>
+<body>
+    <div id="container">
+        <p>This is the first paragraph.</p>
+    </div>
 
+    <script>
+        const container = document.getElementById('container');
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a new paragraph added at the end.';
+        
+        // Append the new paragraph at the end of the container
+        container.append(newParagraph);
+    </script>
+</body>
+</html>
+```
+Output:
+```
+<div id="container">
+    <p>This is the first paragraph.</p>
+    <p>This is a new paragraph added at the end.</p>
+</div>
+```
+2. `prepend()`: Adds Content at the Beginning of the Target Element
+The prepend() method inserts content at the beginning of the target element’s children.
 
+Example:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prepend() Example</title>
+</head>
+<body>
+    <div id="container">
+        <p>This is the first paragraph.</p>
+    </div>
 
+    <script>
+        const container = document.getElementById('container');
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a new paragraph added at the beginning.';
+        
+        // Prepend the new paragraph at the beginning of the container
+        container.prepend(newParagraph);
+    </script>
+</body>
+</html>
+```
+Output:
+```
+<div id="container">
+    <p>This is a new paragraph added at the beginning.</p>
+    <p>This is the first paragraph.</p>
+</div>
+```
+3. `before()`: Inserts Content Before the Target Element
+The before() method inserts content immediately before the target element in the DOM, at the same level (as a sibling).
+
+Example:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>before() Example</title>
+</head>
+<body>
+    <div id="container">
+        <p id="targetParagraph">This is the target paragraph.</p>
+    </div>
+
+    <script>
+        const targetParagraph = document.getElementById('targetParagraph');
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a new paragraph added before the target paragraph.';
+        
+        // Insert the new paragraph before the target paragraph
+        targetParagraph.before(newParagraph);
+    </script>
+</body>
+</html>
+```
+Output:
+```
+<div id="container">
+    <p>This is a new paragraph added before the target paragraph.</p>
+    <p id="targetParagraph">This is the target paragraph.</p>
+</div>
+```
+4. `after()`: Inserts Content After the Target Element
+The after() method inserts content immediately after the target element in the DOM, at the same level (as a sibling).
+
+Example:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>after() Example</title>
+</head>
+<body>
+    <div id="container">
+        <p id="targetParagraph">This is the target paragraph.</p>
+    </div>
+
+    <script>
+        const targetParagraph = document.getElementById('targetParagraph');
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a new paragraph added after the target paragraph.';
+        
+        // Insert the new paragraph after the target paragraph
+        targetParagraph.after(newParagraph);
+    </script>
+</body>
+</html>
+```
+Output:
+```
+<div id="container">
+    <p id="targetParagraph">This is the target paragraph.</p>
+    <p>This is a new paragraph added after the target paragraph.</p>
+</div>
+```
 
 
 
