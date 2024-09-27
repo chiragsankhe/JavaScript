@@ -695,6 +695,196 @@ You can use these string methods and loops in your JavaScript practice to manipu
 ```
 
 
+## Arrays in JavaScript
+An array is a special variable in JavaScript that can hold multiple values at once. Arrays are zero-indexed, meaning the first element has an index of 0.
+
+### Declaring an Array:
+```
+let fruits = ['Apple', 'Banana', 'Orange'];
+let numbers = [1, 2, 3, 4, 5];
+```
+### Accessing Array Elements:
+```
+console.log(fruits[0]); // Apple
+console.log(fruits[1]); // Banana
+```
+### Modifying Elements:
+```
+fruits[1] = 'Mango'; // Changing Banana to Mango
+console.log(fruits); // ['Apple', 'Mango', 'Orange']
+```
+### Array Properties:
++ length:
+Returns the number of elements in the array.
+```
+console.log(fruits.length); // 3
+```
+### Looping Over Arrays
+You can loop over arrays using different loop constructs.
+
++ for Loop
+```
+let numbers = [1, 2, 3, 4, 5];
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+// Output: 1, 2, 3, 4, 5
+```
++ for-of Loop
+```
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+// Output: Apple, Mango, Orange
+```
++ forEach() Method
+The forEach() method executes a function for each array element.
+```
+fruits.forEach(function(fruit, index) {
+  console.log(`${index}: ${fruit}`);
+});
+// Output: 
+// 0: Apple
+// 1: Mango
+// 2: Orange
+```
+## Array Methods
+### Adding/Removing Elements
++ push():
+  Adds an element to the end of the array.
+```
+fruits.push('Grapes');
+console.log(fruits); // ['Apple', 'Mango', 'Orange', 'Grapes']
+```
++ pop():
+  Removes the last element from the array.
+```
+fruits.pop();
+console.log(fruits); // ['Apple', 'Mango', 'Orange']
+```
++ shift():
+  Removes the first element of the array.
+```
+fruits.shift();
+console.log(fruits); // ['Mango', 'Orange']
+```
++ unshift(): 
+Adds an element to the beginning of the array.
+```
+fruits.unshift('Strawberry');
+console.log(fruits); // ['Strawberry', 'Mango', 'Orange']
+```
+### Finding and Sorting Elements
++ indexOf():
+  Returns the index of the first occurrence of an element.
+  ```
+console.log(fruits.indexOf('Orange')); // 1
+ ```
++ includes():
+Checks if an element exists in the array.
+```
+console.log(fruits.includes('Mango')); // true
+```
++ sort():
+Sorts the array alphabetically or in ascending order for numbers.
+```
+let numbers = [4, 2, 5, 1, 3];
+numbers.sort();
+console.log(numbers); // [1, 2, 3, 4, 5]
+```
++ reverse():
+Reverses the array.
+```
+numbers.reverse();
+console.log(numbers); // [5, 4, 3, 2, 1]
+```
+### Extracting and Modifying Arrays
++slice(start, end):
+Extracts a section of an array and returns a new array.
+```
+let slicedFruits = fruits.slice(0, 2); // ['Strawberry', 'Mango']
+```
++ splice(start, deleteCount, items...):
+Removes or replaces elements in the array and can add new elements.
+```
+fruits.splice(1, 1, 'Peach'); // Removes Mango, adds Peach
+console.log(fruits); // ['Strawberry', 'Peach', 'Orange']
+```
+### Array Transformation
++ map():
+Creates a new array by applying a function to each element.
+```
+let numbers = [1, 2, 3, 4];
+let squared = numbers.map(num => num ** 2);
+console.log(squared); // [1, 4, 9, 16]
+```
++ filter():
+Creates a new array with elements that pass a test.
+```
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // [2, 4]
+```
++ reduce():
+Reduces an array to a single value by applying a function.
+```
+let sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // 10
+```
+## Practice Questions
++ Find the Sum of All Elements in an Array
+```
+let numbers = [10, 20, 30, 40, 50];
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+}
+console.log(sum); // Output: 150
+```
++ Filter Out Odd Numbers from an Array
+```
+let numbers = [1, 2, 3, 4, 5, 6];
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4, 6]
+```
++ Convert an Array of Strings to Uppercase
+```
+let fruits = ['apple', 'banana', 'orange'];
+let uppercasedFruits = fruits.map(fruit => fruit.toUpperCase());
+console.log(uppercasedFruits); // Output: ['APPLE', 'BANANA', 'ORANGE']
+```
++ Check if All Elements in an Array are Positive
+```
+let numbers = [1, 2, 3, 4, 5];
+let allPositive = numbers.every(num => num > 0);
+console.log(allPositive); // Output: true
+```
++ Find the Maximum Number in an Array
+```
+let numbers = [10, 25, 5, 42, 30];
+let maxNumber = Math.max(...numbers);
+console.log(maxNumber); // Output: 42
+```
+### Additional Practice Questions
+Reverse an Array Without Using reverse()
+Find the First Element in an Array That is Greater Than 10
+Merge Two Arrays and Remove Duplicates
+Sort an Array of Numbers in Descending Order
+Find the Average of Numbers in an Array
+By practicing these array concepts and methods, you will improve your understanding of how to manipulate arrays efficiently in JavaScript.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
