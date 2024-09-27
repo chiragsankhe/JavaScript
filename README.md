@@ -1127,7 +1127,9 @@ The DOM represents an HTML document as a tree of nodes, where each element, attr
 The entire document is part of the **window** object, which is the global object in the browser.
 
 
-![tree]([https://octodex.github.com/images/minion.png](https://www.w3schools.com/js/pic_htmltree.gif))
+![tree](https://github.com/chiragsankhe/JavaScript/blob/main/images/dom_tree.png)
+
+
 
 ## Accessing and Manipulating DOM Elements
 + Accessing Elements by ID:-
