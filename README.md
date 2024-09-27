@@ -1046,7 +1046,7 @@ let sum = numbers.reduce((acc, num) => acc + num, 0);
 console.log(sum); // Output: 100
 ```
 Example - Finding the Largest Element:
-````
+```
 let maxNum = numbers.reduce((max, num) => (num > max ? num : max), numbers[0]);
 console.log(maxNum); // Output: 40
 ```
