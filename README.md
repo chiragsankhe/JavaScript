@@ -954,6 +954,168 @@ console.log(maxNumber); // Output: 42
 + By practicing these array concepts and methods, you will improve your understanding of how to manipulate arrays efficiently in JavaScript.
 
 
+## Functions in JavaScript
+Functions are reusable blocks of code designed to perform a specific task. They are a core feature of JavaScript, allowing us to write clean and efficient code by encapsulating logic into modular blocks.
+
+### Defining a Function:
+A function is defined using the function keyword, followed by the function name, parentheses for parameters, and curly braces for the code block.
+```
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+```
+### Calling a Function:
+Once a function is defined, it needs to be called to execute the code inside it.
+```
+greet("John"); // Output: Hello, John!
+```
+## Function Parameters and Arguments
++ Parameters:
+  Variables listed inside the parentheses in the function definition.
++ Arguments:
+  Values passed to the function when it is called.
+```
+function add(a, b) {  // a, b are parameters
+  return a + b;
+}
+console.log(add(2, 3)); // 2, 3 are arguments; Output: 5
+```
+### Returning Values
+Functions can return values using the return statement.
+```
+function multiply(a, b) {
+  return a * b;
+}
+let result = multiply(5, 10); // result = 50
+```
+### Local Variables
+Variables declared inside a function are local and accessible only within that function.
+```
+function localScope() {
+  let localVar = "I'm local";
+  console.log(localVar);
+}
+localScope(); // Output: I'm local
+// console.log(localVar); // Error: localVar is not defined
+```
+### Arrow Functions
+Arrow functions, introduced in ES6, provide a shorter syntax for writing functions.
+```
+const greet = (name) => {
+  console.log("Hello, " + name + "!");
+};
+```
+### For single-line functions, the braces can be omitted:
+```
+const greet = (name) => console.log("Hello, " + name + "!");
+Arrow functions are often used for shorter, simpler tasks, and are more concise compared to regular functions.
+```
+### Higher-Order Functions
+A higher-order function is a function that takes another function as an argument or returns a function. These are common in JavaScript when working with arrays and functional programming techniques.
+```
+function higherOrderFunction(callback) {
+  callback();
+}
+function greet() {
+  console.log("Hello!");
+}
+higherOrderFunction(greet); // Output: Hello!
+```
+### Array Methods with Functions
+JavaScript provides several array methods that use functions as callbacks.
+
++ forEach()
+Executes a function for each element in the array.
+```
+let numbers = [1, 2, 3, 4];
+numbers.forEach(num => console.log(num * num));
+// Output: 1, 4, 9, 16 (square of each number)
+```
++ map()
+The map() method creates a new array by applying a function to each element of the original array.
+```
+let numbers = [1, 2, 3, 4];
+let squares = numbers.map(num => num * num);
+console.log(squares); // Output: [1, 4, 9, 16]
+```
++ reduce()
+The reduce() method reduces an array to a single value by applying a function to an accumulator and each element.
+```
+let numbers = [10, 20, 30, 40];
+let sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // Output: 100
+```
+Example - Finding the Largest Element:
+````
+let maxNum = numbers.reduce((max, num) => (num > max ? num : max), numbers[0]);
+console.log(maxNum); // Output: 40
+```
++ filter()
+The filter() method creates a new array with elements that pass a test (function).
+```
+let marks = [55, 92, 88, 99, 74];
+let highScores = marks.filter(score => score > 90);
+console.log(highScores); // Output: [92, 99]
+```
+### Practice Questions
+
++ Count the Occurrence of Vowels in a String
+```
+function countVowels(str) {
+  const vowels = 'aeiouAEIOU';
+  let count = 0;
+  
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  
+  return count;
+}
+console.log(countVowels("Hello World")); // Output: 3
+```
++ Print the Square of Each Value in an Array Using forEach
+```
+let numbers = [1, 2, 3, 4];
+numbers.forEach(num => console.log(num * num));
+// Output: 1, 4, 9, 16
+```
++ Calculate the Sum of an Array Using reduce
+```
+let numbers = [5, 10, 15, 20];
+let sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum); // Output: 50
+```
++ Find the Factorial of a Number Using reduce
+```
+function factorial(n) {
+  let numbers = Array.from({ length: n }, (_, i) => i + 1);
+  return numbers.reduce((acc, num) => acc * num, 1);
+}
+console.log(factorial(5)); // Output: 120
+```
++ Filter Out Students Who Scored More Than 90
+```
+let scores = [78, 92, 85, 91, 88];
+let topScores = scores.filter(score => score > 90);
+console.log(topScores); // Output: [92, 91]
+```
+## Functions as Arguments
+Functions in JavaScript can also be passed as arguments to other functions, allowing us to create more flexible and reusable code.
+
+Example:
+```
+function greet(name) {
+  return "Hello " + name;
+}
+function logGreeting(fn, name) {
+  console.log(fn(name));
+}
+logGreeting(greet, "Alice"); // Output: Hello Alice
+```
+
+
 
 
 
