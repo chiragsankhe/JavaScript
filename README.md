@@ -1210,6 +1210,56 @@ The first paragraph (index 0) with class="intro" is: i m chirag sankhe
 let firstItem = document.querySelector('.list-item'); // Selects the first element with class 'list-item'
 let allItems = document.querySelectorAll('.list-item'); // Selects all elements with class 'list-item'
 ```
+## querySelector()
+```
+<p>Finding HTML Elements by Query Selector</p>
+<p class="intro">Hello World!.</p>
+<p class="intro"> example of  <b>querySelectorAll</b> method.</p>
+
+<p id="demo"></p>
+
+<script>
+const x = document.querySelector("p.intro");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) with class="intro" is: ' + x.innerHTML;
+</script>
+
+output
+
+JavaScript HTML DOM
+Finding HTML Elements by Query Selector
+
+Hello World!.
+
+example of querySelector method.
+
+The first paragraph (index 0) with class="intro" is: example of Hello World!
+```
+ ## querySelectorAll()
+```
+ <p>Finding HTML Elements by Query Selector</p>
+<p class="intro">Hello World!.</p>
+<p class="intro"> example of  <b>querySelectorAll</b> method.</p>
+
+<p id="demo"></p>
+
+<script>
+const x = document.querySelectorAll("p.intro");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 1) with class="intro" is: ' + x[1].innerHTML;
+</script>
+
+output
+
+JavaScript HTML DOM
+Finding HTML Elements by Query Selector
+
+Hello World!.
+
+example of querySelectorAll method.
+
+The first paragraph (index 0) with class="intro" is: example of querySelectorAll method.
+```
 ## Manipulating DOM Elements
 1. Changing Content with `innerHTML` and `innerText`
 + innerHTML:
@@ -1221,11 +1271,43 @@ let heading = document.getElementById('main-heading');
 heading.innerText = "Welcome to JavaScript DOM!"; // Changes the text inside the element
 heading.innerHTML = "<span style='color: red'>Welcome</span> to JavaScript!"; // Inserts HTML content
 ```
+example 
+```
+<h2>JavaScript can Change HTML</h2>
+
+<p id="p1">Hello World!</p>
+
+<script>
+document.getElementById("p1").innerHTML = "New text chirag sankhe";
+</script>
+
+output
+
+JavaScript can Change HTML
+New text chirag sankhe
+```
+```
+<script>
+const element = document.getElementById("id01");
+element.innerHTML = "New Heading";
+</script>
+
+```
+
 + Changing Element Attributes
 You can change attributes like src, href, and alt for elements like images and links using setAttribute().
 ```
 let image = document.getElementById('logo');
 image.setAttribute('src', 'new-logo.png'); // Changes the source of the image
+```
+```
+<h2>JavaScript HTML DOM</h2>
+<img id="image" src="smiley.gif" width="160" height="120">
+
+<script>
+document.getElementById("image").src = "landscape.jpg";
+</script>
+<p>The original image was smiley.gif, but the script changed it to landscape.jpg</p>
 ```
  + Changing Style
 You can modify the inline styles of an element using the style property.
