@@ -1127,20 +1127,23 @@ The DOM represents an HTML document as a tree of nodes, where each element, attr
 The entire document is part of the **window** object, which is the global object in the browser.
 
 ## Accessing and Manipulating DOM Elements
-+ Accessing Elements by ID
-You can use `document.getElementById()` to access an element by its ID.
++ Accessing Elements by ID:-
+  
+ You can use `document.getElementById()` to access an element by its ID.
 ```
 let heading = document.getElementById('main-heading');
 console.log(heading.innerText); // Logs the text inside the element with id 'main-heading'
 ```
-+ Accessing Elements by Class Name
-`document.getElementsByClassName()` returns a collection of elements that have a certain class. The result is an `HTMLCollection,` which is similar to an array but not exactly the same.
++ Accessing Elements by Class Name:-
+  
+ `document.getElementsByClassName()` returns a collection of elements that have a certain class. The result is an `HTMLCollection,` which is similar to an array but not exactly the same.
 ```
 let items = document.getElementsByClassName('list-item');
 console.log(items[0].innerText); // Access the first element with class 'list-item'
 ```
-+ Accessing Elements by Query Selector
-The `querySelector()` method allows you to select elements using CSS-style selectors. It returns the first matching element, while `querySelectorAll()` returns all matching elements.
++ Accessing Elements by Query Selector:-
+  
+ The `querySelector()` method allows you to select elements using CSS-style selectors. It returns the first matching element, while `querySelectorAll()` returns all matching elements.
 ```
 let firstItem = document.querySelector('.list-item'); // Selects the first element with class 'list-item'
 let allItems = document.querySelectorAll('.list-item'); // Selects all elements with class 'list-item'
@@ -1171,11 +1174,11 @@ heading.style.fontSize = "24px";  // Changes the font size
 ```
 ## Relationship Between DOM Elements
  Parent, Child, and Sibling Nodes
-+Parent Node: 
++ Parent Node: 
 The element that contains other elements.
-+Child Node: 
++ Child Node: 
 An element that is nested within another element.
-+Sibling Node: 
++ Sibling Node: 
 Elements that share the same parent.
 ```
 let parent = document.getElementById('list').parentNode; // Accesses the parent of the element with id 'list'
