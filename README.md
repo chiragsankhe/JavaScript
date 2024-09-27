@@ -1139,6 +1139,33 @@ The entire document is part of the **window** object, which is the global object
 let heading = document.getElementById('main-heading');
 console.log(heading.innerText); // Logs the text inside the element with id 'main-heading'
 ```
+```
+<h2>JavaScript HTML DOM</h2>
+
+<p id="intro">Finding HTML Elements by Id</p>
+<p id="p1">hello chirag sankhe</p>
+
+<p id="demo"></p>
+
+<script>
+const element = document.getElementById("p1");
+
+document.getElementById("demo").innerHTML = 
+"hello engineer " + element.innerHTML;
+
+</script>
+
+output
+
+avaScript HTML DOM
+Finding HTML Elements by Id
+
+hello chirag sankhe
+
+hello engineer hello chirag sankhe
+
+```
+
 + Accessing Elements by Class Name:-
   
  `document.getElementsByClassName()` returns a collection of elements that have a certain class. The result is an `HTMLCollection,` which is similar to an array but not exactly the same.
@@ -1146,6 +1173,36 @@ console.log(heading.innerText); // Logs the text inside the element with id 'mai
 let items = document.getElementsByClassName('list-item');
 console.log(items[0].innerText); // Access the first element with class 'list-item'
 ```
+```
+<h2>JavaScript HTML DOM</h2>
+
+<p>Finding HTML Elements by Class Name.</p>
+<p class="intro">hello everyone </p>
+<p class="intro">i m chirag sankhe </p>
+<p class="intro">i m learning javascript </p>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementsByClassName("intro");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) with class="intro" is: ' + x[1].innerHTML;
+</script>
+
+output
+JavaScript HTML DOM
+Finding HTML Elements by Class Name.
+
+hello everyone
+
+i m chirag sankhe
+
+i m learning javascript
+
+The first paragraph (index 0) with class="intro" is: i m chirag sankhe
+
+```
+
 + Accessing Elements by Query Selector:-
   
  The `querySelector()` method allows you to select elements using CSS-style selectors. It returns the first matching element, while `querySelectorAll()` returns all matching elements.
