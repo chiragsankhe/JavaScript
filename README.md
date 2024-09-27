@@ -864,11 +864,11 @@ let maxNumber = Math.max(...numbers);
 console.log(maxNumber); // Output: 42
 ```
 ### Additional Practice Questions
-Reverse an Array Without Using reverse()
-Find the First Element in an Array That is Greater Than 10
-Merge Two Arrays and Remove Duplicates
-Sort an Array of Numbers in Descending Order
-Find the Average of Numbers in an Array
++ Reverse an Array Without Using reverse()
++ Find the First Element in an Array That is Greater Than 10
++ Merge Two Arrays and Remove Duplicates
++ Sort an Array of Numbers in Descending Order
++ Find the Average of Numbers in an Array
 By practicing these array concepts and methods, you will improve your understanding of how to manipulate arrays efficiently in JavaScript.
 
 
