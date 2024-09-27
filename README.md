@@ -1351,14 +1351,14 @@ The DOM allows you to dynamically manipulate the structure and content of web pa
 ## Accessing Attributes Using DOM Methods in JavaScript
 To access or manipulate an HTML element's attributes, JavaScript provides several methods:
 
-+getAttribute(): 
++ getAttribute():- 
 To retrieve an attribute value.
-+ setAttribute():
++ setAttribute():-
 To set a new value to an attribute.
-+ removeAttribute():
++ removeAttribute():-
 To remove an attribute from an element.
 
-1. getAttribute(): Retrieve an Attribute Value
+1. `getAttribute()`: Retrieve an Attribute Value
 The getAttribute() method is used to get the value of a specified attribute from an HTML element.
 
 Example:
@@ -1394,7 +1394,7 @@ Copy code
 We use getAttribute('src') to get the value of the src attribute, which contains the image source ("image.jpg").
 We use getAttribute('alt') to get the alternative text ("Sample Image").
 
-2. setAttribute(): Set a New Value to an Attribute
+2. `setAttribute()`: Set a New Value to an Attribute
 The setAttribute() method is used to set or update an attribute's value on an HTML element.
 
 Example:
@@ -1430,7 +1430,7 @@ Copy code
 We use setAttribute('src', 'newImage.jpg') to change the image source to "newImage.jpg".
 We use setAttribute('alt', 'New Image Description') to update the alt text.
 
-3. removeAttribute(): Remove an Attribute from an Element
+3. `removeAttribute()`: Remove an Attribute from an Element
 The removeAttribute() method removes a specified attribute from an HTML element.
 
 Example:
@@ -1462,9 +1462,9 @@ Copy code
 We use removeAttribute('alt') to remove the alt attribute from the image.
 After removal, getAttribute('alt') returns null because the attribute no longer exists on the element.
 ##Summary:
-+ getAttribute() retrieves the value of an existing attribute on an element.
-+ setAttribute() adds or modifies the value of an attribute.
-+ removeAttribute() deletes an attribute from an element, making it as if that attribute never existed.
++ `getAttribute()` retrieves the value of an existing attribute on an element.
++ `setAttribute()` adds or modifies the value of an attribute.
++ `removeAttribute()` deletes an attribute from an element, making it as if that attribute never existed.
 
 
 
