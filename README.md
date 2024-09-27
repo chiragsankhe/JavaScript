@@ -777,7 +777,7 @@ console.log(fruits); // ['Strawberry', 'Mango', 'Orange']
 ### Finding and Sorting Elements
 + indexOf():
   Returns the index of the first occurrence of an element.
-  ```
+ ```
 console.log(fruits.indexOf('Orange')); // 1
  ```
 + includes():
