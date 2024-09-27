@@ -1413,14 +1413,14 @@ Copy code
 
     <script>
         // Access the image element
-        const image = document.getElementById('myImage');
+        const image = `document.getElementById('myImage')`;
         
         // Change the 'src' attribute to a new image
-        image.setAttribute('src', 'newImage.jpg');
+        image.`setAttribute('src', 'newImage.jpg')`;
         console.log('New image source:', image.getAttribute('src')); // Output: 'newImage.jpg'
 
         // Update the 'alt' attribute
-        image.setAttribute('alt', 'New Image Description');
+        image.`setAttribute('alt', 'New Image Description')`;
         console.log('New alt text:', image.getAttribute('alt')); // Output: 'New Image Description'
     </script>
 </body>
@@ -1434,7 +1434,7 @@ We use setAttribute('alt', 'New Image Description') to update the alt text.
 The removeAttribute() method removes a specified attribute from an HTML element.
 
 Example:
-````
+```
 html
 Copy code
 <!DOCTYPE html>
