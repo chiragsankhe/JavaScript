@@ -863,13 +863,95 @@ let numbers = [10, 25, 5, 42, 30];
 let maxNumber = Math.max(...numbers);
 console.log(maxNumber); // Output: 42
 ```
+
++ practice question 1 
+```
+                     let marks = [85,97,44,37,76,60];
+
+                      let sum = 0;
+                    
+
+                     for(let i=0;i<marks.length;i++)
+                         {
+                             sum +=  marks[i];
+
+                         }
+
+                         let avg = sum /marks.length;
+                         console.log(avg);
+```
++ pratice question 2
+```
+                     let price = [250,645,300,900,50];
+
+                     for(let i = 0 ;i<=price.length;i++)
+                         {
+                            let offer = price[i]/10;
+                            console.log( price[i]," in offer " , price[i]-offer);
+                        }
+
+```
++ --------array--- push(add) ---pop(delete from end) --- toString -------------                   
+```
+                       let name = ["chirag ", "prachi ", "pranjal", ];
+
+                       name.push( "yadnesh","manisha" , "manoj" , "sankhe");
+
+                       console.log(name);
+
+                       name.pop();
+
+                       console.log(name);
+
+                       console.log(name.toString());
+```
++ --- concat(join array) --- unshit( add to start) -- shift (delete from start)
+```
+                    let num = [1,2,3,4,5];
+                    let num2 = [11,22,33,44,55];
+
+                   
+
+                    num.unshift(0);
+                    num.shift();
+                    console.log(num.concat(num2));
+```
++ --------------- slice(return a pice of array) ------------- splice(change original array(add,removemreplace)) -------
+                
+```
+
+       let name = ["chirag ", "prachi ", "pranjal", ];
+
+          console.log(name.slice());
+
+              console.log(name.splice(1,1,"sankhe"));
+
+              let num = [1,2,3,4,5];
+
+            let new_num= num.splice(1,2,22,33);
+
+               console.log(num );
+```
+  + questions 
+```
+            // let companys =["bloomberg","microsoft","uber","google","ibm","netflix"];
+                
+            // companys.shift();
+
+            // companys.splice(1,1,"ola");
+
+            // companys.push("amazon");
+
+            // console.log(companys);
+```
+          
 ### Additional Practice Questions
 + Reverse an Array Without Using reverse()
 + Find the First Element in an Array That is Greater Than 10
 + Merge Two Arrays and Remove Duplicates
 + Sort an Array of Numbers in Descending Order
 + Find the Average of Numbers in an Array
-By practicing these array concepts and methods, you will improve your understanding of how to manipulate arrays efficiently in JavaScript.
++ By practicing these array concepts and methods, you will improve your understanding of how to manipulate arrays efficiently in JavaScript.
 
 
 
