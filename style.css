@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(110, 65, 65);
+}
+
+.box{
+
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: aquamarine;
+    display:inline-block;
+    margin-left: 20px ;
+
+    text-align: center;
+    
+}
+
+
+.p_class{
+
+    background-color: pink;
+    
+}
+
+.newclass {
+    color: brown;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 50px;
+    margin-left: 25px;
+}
+
+
+
+#id_p{
+    height: 200px;
+    width: 200px;
+    background-color: pink;
+    color: black;    
+}
