@@ -1115,6 +1115,99 @@ function logGreeting(fn, name) {
 logGreeting(greet, "Alice"); // Output: Hello Alice
 ```
 
+# Introduction to DOM
+### (Document Object Model)
+The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the structure of a web page as a tree of objects, allowing developers to access and manipulate elements on a web page using JavaScript.
+
+## DOM Tree Structure
+The DOM represents an HTML document as a tree of nodes, where each element, attribute, and piece of text is a node. The structure looks like this:
+
+**Parent** nodes contain **child** nodes.
+**Siblings** are nodes that share the same parent.
+The entire document is part of the **window** object, which is the global object in the browser.
+
+## Accessing and Manipulating DOM Elements
++ Accessing Elements by ID
+You can use `document.getElementById()` to access an element by its ID.
+```
+let heading = document.getElementById('main-heading');
+console.log(heading.innerText); // Logs the text inside the element with id 'main-heading'
+```
++ Accessing Elements by Class Name
+`document.getElementsByClassName()` returns a collection of elements that have a certain class. The result is an `HTMLCollection,` which is similar to an array but not exactly the same.
+```
+let items = document.getElementsByClassName('list-item');
+console.log(items[0].innerText); // Access the first element with class 'list-item'
+```
++ Accessing Elements by Query Selector
+The `querySelector()` method allows you to select elements using CSS-style selectors. It returns the first matching element, while `querySelectorAll()` returns all matching elements.
+```
+let firstItem = document.querySelector('.list-item'); // Selects the first element with class 'list-item'
+let allItems = document.querySelectorAll('.list-item'); // Selects all elements with class 'list-item'
+```
+## Manipulating DOM Elements
+1. Changing Content with `innerHTML` and `innerText`
++ innerHTML:
+Sets or returns the HTML content of an element, including its child elements.
++ innerText:
+Sets or returns the text content of an element, excluding HTML tags.
+```
+let heading = document.getElementById('main-heading');
+heading.innerText = "Welcome to JavaScript DOM!"; // Changes the text inside the element
+heading.innerHTML = "<span style='color: red'>Welcome</span> to JavaScript!"; // Inserts HTML content
+```
++ Changing Element Attributes
+You can change attributes like src, href, and alt for elements like images and links using setAttribute().
+```
+let image = document.getElementById('logo');
+image.setAttribute('src', 'new-logo.png'); // Changes the source of the image
+```
+ + Changing Style
+You can modify the inline styles of an element using the style property.
+```
+let heading = document.getElementById('main-heading');
+heading.style.color = "blue";  // Changes the text color to blue
+heading.style.fontSize = "24px";  // Changes the font size
+```
+## Relationship Between DOM Elements
+ Parent, Child, and Sibling Nodes
++Parent Node: 
+The element that contains other elements.
++Child Node: 
+An element that is nested within another element.
++Sibling Node: 
+Elements that share the same parent.
+```
+let parent = document.getElementById('list').parentNode; // Accesses the parent of the element with id 'list'
+let children = document.getElementById('list').children; // Accesses all child elements of 'list'
+let firstSibling = document.getElementById('list').nextElementSibling; // Accesses the next sibling element
+```
+#### Example: Changing the Text of an Element
+```
+<h2 id="heading">Original Heading</h2>
+<script>
+  let heading = document.getElementById('heading');
+  heading.innerText = "Updated Heading"; // Updates the text inside the h2 element
+</script>
+```
+#### Working with Events
+You can also manipulate the DOM in response to user actions by attaching event listeners. For example:
+```
+document.getElementById('button').addEventListener('click', function() {
+  document.getElementById('heading').innerText = "Button Clicked!";
+});
+```
+#### Conclusion
+The DOM allows you to dynamically manipulate the structure and content of web pages. It plays a crucial role in making web pages interactive by enabling JavaScript to interact with HTML and CSS. Through the DOM, you can access and change HTML elements, attributes, and styles, making it a powerful tool for web development.
+
+
+
+
+
+
+
+
+
 
 
 
