@@ -1641,7 +1641,177 @@ Output:
 </div>
 ```
 
+## Events in JavaScript
+Events in JavaScript are actions or occurrences that happen in the browser, such as when a user clicks a button, hovers over an element, or when a page finishes loading. These events can trigger tasks or functions to respond to user interaction.
 
+## Handling Events in JavaScript
+JavaScript allows handling various events such as clicks, double clicks, key presses, mouse movement, and more. You can listen for events and execute specific code when those events are triggered.
+
++ Handling Click and Double Click Events
+The most common events to handle are click and double-click events:
+
++ click:
+Fired when an element is clicked.
++ dblclick:
+Fired when an element is double-clicked.
+Example: Handling Click and Double Click Events
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click and Double Click Example</title>
+</head>
+<body>
+    <button id="clickButton">Click Me</button>
+    <button id="dblClickButton">Double Click Me</button>
+
+    <script>
+        const clickButton = document.getElementById('clickButton');
+        const dblClickButton = document.getElementById('dblClickButton');
+
+        // Click event handler
+        clickButton.addEventListener('click', () => {
+            alert('Button clicked!');
+        });
+
+        // Double-click event handler
+        dblClickButton.addEventListener('dblclick', () => {
+            alert('Button double-clicked!');
+        });
+    </script>
+</body>
+</html>
+```
+In this example:
+
+Clicking the first button triggers an alert.
+Double-clicking the second button triggers a different alert.
+The Event Object in JavaScript
+When an event is triggered, an event object is created that provides additional information about the event, such as:
+
++ `target`: The element that triggered the event.
++ `type`: The type of event (click, keypress, etc.).
++ `clientX and clientY`: The mouse coordinates relative to the browser window when the event occurred.
+Example: Using the Event Object
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object Example</title>
+</head>
+<body>
+    <button id="infoButton">Click for Event Info</button>
+
+    <script>
+        const button = document.getElementById('infoButton');
+
+        button.addEventListener('click', (event) => {
+            console.log('Event type:', event.type); // 'click'
+            console.log('Clicked element:', event.target); // <button> element
+            console.log('Mouse X position:', event.clientX); // X coordinate
+            console.log('Mouse Y position:', event.clientY); // Y coordinate
+        });
+    </script>
+</body>
+</html>
+```
+Here, we log details about the event, including the type of event, the target element, and the mouse position when the click event occurred.
+
+## Event Handlers in JavaScript
+Event handlers are functions that run when an event is triggered. These handlers are registered using `addEventListener()` or by setting properties like `onclick`.
+```
+element.addEventListener('click', () => {
+    // Handle click event
+});
+Removing Event Handlers in JavaScript
+To remove an event handler, you can use the `removeEventListener()` method.
+```
+Example: Adding and Removing an Event Handler
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Event Handler Example</title>
+</head>
+<body>
+    <button id="clickButton">Click Me</button>
+
+    <script>
+        const button = document.getElementById('clickButton');
+
+        const handleClick = () => {
+            alert('Button clicked!');
+            button.removeEventListener('click', handleClick); // Removes the event handler
+        };
+
+        // Adding the click event listener
+        button.addEventListener('click', handleClick);
+    </script>
+</body>
+</html>
+```
+In this example, the event handler is removed after the first click, so subsequent clicks won’t trigger the alert.
+
+### Creating a Button to Toggle Between Dark and Light Mode
+You can create a button that switches between light and dark mode by toggling a CSS class on the body element.
+
+Example: Dark/Light Mode Toggle
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Mode Toggle</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Toggle Dark Mode</button>
+
+    <script>
+        const button = document.getElementById('toggleButton');
+        const body = document.body;
+
+        button.addEventListener('click', () => {
+            // Toggle the 'dark-mode' class on the body element
+            body.classList.toggle('dark-mode');
+            
+            // Update the button text based on the current mode
+            if (body.classList.contains('dark-mode')) {
+                button.textContent = 'Switch to Light Mode';
+            } else {
+                button.textContent = 'Switch to Dark Mode';
+            }
+        });
+    </script>
+</body>
+</html>
+```
++ How it Works:
+We use the `classList.toggle()` method to add or remove the dark-mode class from the body element.
+The CSS defines styles for light mode (default) and dark mode (when the dark-mode class is present).
+When the button is clicked, the mode is toggled and the button text is updated accordingly.
 
 
 
