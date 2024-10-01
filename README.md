@@ -1813,6 +1813,121 @@ We use the `classList.toggle()` method to add or remove the dark-mode class from
 The CSS defines styles for light mode (default) and dark mode (when the dark-mode class is present).
 When the button is clicked, the mode is toggled and the button text is updated accordingly.
 
+## class , object and prototype
+In JavaScript, prototypes, classes, and objects are key concepts of object-oriented programming. Let's explore each with examples.
+
+### Objects and Prototypes
+Every JavaScript object has a prototype. A prototype is an object from which other objects inherit properties.
+
+When you create an object in JavaScript, it can inherit methods and properties from its prototype.
+
+Example of Prototypes:
+```
+// Create a prototype object
+let animal = {
+  species: "Unknown",
+  eat: function() {
+    console.log(`${this.species} is eating.`);
+  }
+};
+
+// Create a new object that inherits from animal
+let dog = Object.create(animal);
+dog.species = "Dog";
+
+// Now dog object inherits properties and methods from animal
+dog.eat();  // Output: Dog is eating.
+
+```
+Here, dog inherits the eat method from the animal prototype. Object.create(animal) sets animal as the prototype of dog. Even though dog doesn't directly define eat, it can still access it through its prototype.
+
+### Prototypes in Functions (Function Constructors)
+Before ES6 classes, JavaScript used constructor functions and prototypes to achieve inheritance and object creation.
+
+Example using Constructor Function and Prototypes:
+```
+// Constructor function
+function Car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+
+// Adding a method to Car's prototype
+Car.prototype.displayInfo = function() {
+  console.log(`Car: ${this.make} ${this.model}`);
+};
+
+// Creating new instances
+let car1 = new Car('Toyota', 'Camry');
+let car2 = new Car('Honda', 'Accord');
+
+car1.displayInfo();  // Output: Car: Toyota Camry
+car2.displayInfo();  // Output: Car: Honda Accord
+```
+Here, Car is a constructor function. Instances of Car (like car1 and car2) share the displayInfo method, which is defined on Car.prototype.
+
+### Classes in ES6
+In ES6, JavaScript introduced the class syntax, which is essentially syntactic sugar over the prototype-based inheritance.
+
+Example using Classes:
+```
+// Define a class
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // Method of the class
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+  }
+}
+
+// Create an object from the class
+let person1 = new Person('John', 30);
+let person2 = new Person('Jane', 25);
+
+person1.greet();  // Output: Hello, my name is John and I'm 30 years old.
+person2.greet();  // Output: Hello, my name is Jane and I'm 25 years old.
+```
++ Key Differences:
+Prototype-based Inheritance: Objects inherit directly from other objects using prototypes.
+
++ `Classes:`
+   ES6 classes provide a clearer syntax for working with constructor functions and prototypes. Under the hood, classes still use prototypes, but they make the code easier to write and understand.
+### Class Inheritance
+Classes also allow for inheritance in an easy-to-read format.
+
+Example of Class Inheritance:
+```
+// Base class
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+// Subclass inheriting from Animal
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+let dog = new Dog('Buddy');
+dog.speak();  // Output: Buddy barks.
+```
+Here, the Dog class extends the Animal class, inheriting its properties and methods. We override the speak method to make the dog bark instead of the generic sound.
+
++ Summary:
+Prototypes are the foundation of JavaScript's inheritance system. Objects inherit properties and methods from their prototype.
+Classes in ES6 simplify object-oriented programming by providing a cleaner syntax, though they still work using prototypes behind the scenes.
+Constructor functions and prototypes were used before classes for inheritance.
 
 
 
