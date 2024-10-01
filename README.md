@@ -1994,4 +1994,42 @@ daughter.describe();      // Output: Hi, I'm Lily. I am an 8-year-old Female.
 daughter.describeSchool(); // Output: Lily studies at Greenwood Elementary Schoo
 ```
 
+### one more example 
+```
+// Correct class definition with curly braces
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  info() {
+    console.log(`My name is ${this.name} and my age is ${this.age}`);
+  }
+}
+
+// Engineer class extending Person
+class Engineer extends Person {
+  constructor(name, age, field) {
+    // Call the parent class constructor
+    super(name, age);
+    this.fieldName = field;  // Correct the property name
+  }
+
+  details() {
+    // Use 'this' to refer to the object's properties
+    console.log(`I work in the ${this.fieldName} field. My name is ${this.name} and my age is ${this.age}`);
+  }
+}
+
+// Create instances and call methods
+let prachi = new Person("Prachi", "27");
+prachi.info();  // Output: My name is Prachi and my age is 27
+
+let chirag = new Engineer("Chirag", "24", "IT");
+chirag.details();  // Output: I work in the IT field. My name is Chirag and my age is 24
+
+```
+
+
 
