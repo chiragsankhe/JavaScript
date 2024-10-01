@@ -2106,7 +2106,7 @@ longRunningTaskAsync(() => {
 console.log("Task 3: Executed immediately");  // This runs immediately, without waiting
 ```
 Output:
-
+```
 Task 1: Start
 Task 3: Executed immediately
 // (3-second delay)
