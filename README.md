@@ -1930,7 +1930,68 @@ Classes in ES6 simplify object-oriented programming by providing a cleaner synta
 Constructor functions and prototypes were used before classes for inheritance.
 
 
++ Example of a Family Class:
+```
+javascript
+Copy code
+// Define the base Person class
+class Person {
+  constructor(name, age, gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
 
+  // Method to describe the person
+  describe() {
+    console.log(`Hi, I'm ${this.name}. I am a ${this.age}-year-old ${this.gender}.`);
+  }
+}
 
+// Define a Parent class that extends from Person
+class Parent extends Person {
+  constructor(name, age, gender, job) {
+    super(name, age, gender);  // Inherit properties from Person class
+    this.job = job;
+  }
+
+  // Method specific to Parent
+  describeJob() {
+    console.log(`${this.name} works as a ${this.job}.`);
+  }
+}
+
+// Define a Child class that extends from Person
+class Child extends Person {
+  constructor(name, age, gender, school) {
+    super(name, age, gender);  // Inherit properties from Person class
+    this.school = school;
+  }
+
+  // Method specific to Child
+  describeSchool() {
+    console.log(`${this.name} studies at ${this.school}.`);
+  }
+}
+
+// Create objects representing family members
+let father = new Parent('John', 45, 'Male', 'Engineer');
+let mother = new Parent('Emma', 42, 'Female', 'Doctor');
+let son = new Child('Jake', 12, 'Male', 'Greenwood Middle School');
+let daughter = new Child('Lily', 8, 'Female', 'Greenwood Elementary School');
+
+// Calling methods on the objects
+father.describe();        // Output: Hi, I'm John. I am a 45-year-old Male.
+father.describeJob();     // Output: John works as an Engineer.
+
+mother.describe();        // Output: Hi, I'm Emma. I am a 42-year-old Female.
+mother.describeJob();     // Output: Emma works as a Doctor.
+
+son.describe();           // Output: Hi, I'm Jake. I am a 12-year-old Male.
+son.describeSchool();     // Output: Jake studies at Greenwood Middle School.
+
+daughter.describe();      // Output: Hi, I'm Lily. I am an 8-year-old Female.
+daughter.describeSchool(); // Output: Lily studies at Greenwood Elementary Schoo
+```
 
 
