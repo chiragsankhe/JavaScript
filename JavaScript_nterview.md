@@ -1059,3 +1059,169 @@ document.getElementById("list").addEventListener("click", function(event) {
 - Better **performance** (fewer listeners)
 - Handles **dynamic elements** automatically
 
+---
+
+# 🟢 JavaScript Interview Q&A — Objects & Arrays
+
+---
+
+## **Q55. How to clone an object in JavaScript?**
+
+There are multiple ways to **clone (copy)** an object:
+
+### **1. Using Spread Operator (Shallow Copy)**
+```javascript
+const obj = { name: "Chirag", age: 22 };
+const clone = { ...obj };
+
+console.log(clone); // { name: "Chirag", age: 22 }
+```
+
+### **2. Using Object.assign() (Shallow Copy)**
+```javascript
+const obj = { name: "Chirag", age: 22 };
+const clone = Object.assign({}, obj);
+
+console.log(clone); // { name: "Chirag", age: 22 }
+```
+
+### **3. Using JSON Methods (Deep Copy, but limited)**
+```javascript
+const obj = { name: "Chirag", skills: ["JS", "React"] };
+const deepClone = JSON.parse(JSON.stringify(obj));
+
+console.log(deepClone); // { name: "Chirag", skills: ["JS", "React"] }
+```
+
+### **4. Using Structured Clone (Best Way)**
+```javascript
+const obj = { name: "Chirag", skills: ["JS", "React"] };
+const deepClone = structuredClone(obj);
+
+console.log(deepClone); // { name: "Chirag", skills: ["JS", "React"] }
+```
+
+---
+
+## **Q56. Difference between deep copy and shallow copy**
+
+| **Aspect**         | **Shallow Copy**                          | **Deep Copy**                          |
+|---------------------|----------------------------------------|---------------------------------------|
+| **Definition**      | Copies only **top-level properties**.   | Copies **nested objects** as well.   |
+| **Effect**          | Nested objects **share the same reference**. | Nested objects are **fully cloned**. |
+| **Methods**         | Spread (`...`), `Object.assign()`       | `JSON.parse(JSON.stringify())`, `structuredClone()` |
+
+**Example:**
+```javascript
+const obj1 = { name: "Chirag", address: { city: "Boisar" } };
+
+// Shallow Copy
+const shallow = { ...obj1 };
+shallow.address.city = "Mumbai";
+console.log(obj1.address.city); // "Mumbai" ❌
+
+// Deep Copy
+const deep = JSON.parse(JSON.stringify(obj1));
+deep.address.city = "Pune";
+console.log(obj1.address.city); // "Mumbai" ✅
+```
+
+---
+
+## **Q57. How to merge two objects in JavaScript?**
+
+### **1. Using Spread Operator (Recommended)**
+```javascript
+const obj1 = { name: "Chirag" };
+const obj2 = { age: 22 };
+const merged = { ...obj1, ...obj2 };
+
+console.log(merged); // { name: "Chirag", age: 22 }
+```
+
+### **2. Using Object.assign()**
+```javascript
+const merged = Object.assign({}, obj1, obj2);
+console.log(merged); // { name: "Chirag", age: 22 }
+```
+
+---
+
+## **Q58. How to remove duplicates from an array in JavaScript?**
+
+### **1. Using Set (Recommended)**
+```javascript
+const arr = [1, 2, 2, 3, 4, 4, 5];
+const uniqueArr = [...new Set(arr)];
+
+console.log(uniqueArr); // [1, 2, 3, 4, 5]
+```
+
+### **2. Using filter() and indexOf()**
+```javascript
+const uniqueArr = arr.filter((value, index, self) => self.indexOf(value) === index);
+console.log(uniqueArr); // [1, 2, 3, 4, 5]
+```
+
+### **3. Using reduce()**
+```javascript
+const uniqueArr = arr.reduce((acc, curr) => {
+  if (!acc.includes(curr)) acc.push(curr);
+  return acc;
+}, []);
+
+console.log(uniqueArr); // [1, 2, 3, 4, 5]
+```
+
+---
+
+## **Q59. Difference between forEach, map, filter, and reduce**
+
+| **Method**    | **Returns**          | **Purpose**                        | **Modifies Original Array?** |
+|--------------|----------------------|----------------------------------|-------------------------------|
+| `forEach`    | `undefined`          | Loops through elements.          | ❌ No |
+| `map`        | **New array**        | Transforms each element.         | ❌ No |
+| `filter`     | **New array**        | Filters elements based on a condition. | ❌ No |
+| `reduce`     | **Single value**     | Reduces array to a single result. | ❌ No |
+
+**Example:**
+```javascript
+const arr = [1, 2, 3, 4];
+
+arr.forEach(num => console.log(num * 2));      // 2 4 6 8
+console.log(arr.map(num => num * 2));          // [2, 4, 6, 8]
+console.log(arr.filter(num => num > 2));       // [3, 4]
+console.log(arr.reduce((sum, num) => sum + num, 0)); // 10
+```
+
+---
+
+## **Q60. What are object destructuring and array destructuring?**
+
+### **Object Destructuring**
+```javascript
+const user = { name: "Chirag", age: 22 };
+const { name, age } = user;
+
+console.log(name); // Chirag
+console.log(age);  // 22
+```
+
+### **Array Destructuring**
+```javascript
+const numbers = [10, 20, 30];
+const [a, b, c] = numbers;
+
+console.log(a); // 10
+console.log(b); // 20
+console.log(c); // 30
+```
+
+### **With Default Values**
+```javascript
+const [x = 1, y = 2] = [10];
+console.log(x); // 10
+console.log(y); // 2
+```
+
+---
