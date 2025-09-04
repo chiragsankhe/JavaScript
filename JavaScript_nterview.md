@@ -619,4 +619,309 @@ if (true) {
 }
 console.log(blockVar); // ❌ ReferenceError
 ```
+---
+
+# 🟢 JavaScript Interview Q&A — Arrays & Functions (Advanced)
+
+---
+
+## **1. Arrays in JavaScript**
+
+### **Q23. How to declare arrays in JavaScript?**
+
+**Ways to declare arrays:**
+```javascript
+// Array literal (most common)
+const arr1 = [1, 2, 3];
+
+// Using new Array()
+const arr2 = new Array(1, 2, 3);
+
+// Empty array
+const arr3 = [];
+
+console.log(arr1, arr2, arr3);
+```
+
+---
+
+### **Q24. Difference between array literal and `new Array()`?**
+
+| **Aspect**    | **Array Literal** | **new Array()** |
+|--------------|-------------------|-----------------|
+| **Syntax**   | `const arr = [1,2];` | `const arr = new Array(1,2);` |
+| **Empty Array** | `[]` | `new Array(5)` → creates array of length 5 |
+| **Preferred** | ✅ Yes | ❌ Use less often |
+
+**Example:**
+```javascript
+const arr1 = [5];       // [5]
+const arr2 = new Array(5); // [empty × 5]
+console.log(arr1, arr2);
+```
+
+---
+
+### **Q25. How to check if a variable is an array?**
+
+```javascript
+const arr = [1, 2, 3];
+console.log(Array.isArray(arr));  // ✅ true
+console.log(arr instanceof Array); // ✅ true
+console.log(typeof arr);         // ❌ "object"
+```
+
+---
+
+### **Q26. How does JavaScript store arrays internally?**
+
+- JavaScript arrays are **objects** with **integer-based keys**.
+- Internally stored as **dynamic objects**, not fixed-size arrays like C++/Java.
+
+```javascript
+const arr = [1, 2, 3];
+console.log(typeof arr); // "object"
+```
+
+---
+
+## **2. Array Methods**
+
+### **Q27. Explain `push()`, `pop()`, `shift()`, and `unshift()`**
+
+| **Method**   | **Action**          | **Returns** |
+|-------------|---------------------|-------------|
+| `push()`    | Adds to **end**      | New length |
+| `pop()`     | Removes from **end** | Removed element |
+| `shift()`   | Removes from **start** | Removed element |
+| `unshift()` | Adds to **start**    | New length |
+
+**Example:**
+```javascript
+const arr = [1, 2];
+arr.push(3);   // [1, 2, 3]
+arr.pop();     // [1, 2]
+arr.unshift(0);// [0, 1, 2]
+arr.shift();   // [1, 2]
+```
+
+---
+
+### **Q28. Difference between `slice()` and `splice()`**
+
+| **Aspect** | **slice()** | **splice()** |
+|-----------|------------|-------------|
+| **Purpose** | Returns a copy | Modifies the original |
+| **Mutates** | ❌ No | ✅ Yes |
+| **Syntax** | `arr.slice(start, end)` | `arr.splice(start, count, newItems)` |
+
+**Example:**
+```javascript
+const arr = [1, 2, 3, 4];
+console.log(arr.slice(1, 3)); // [2, 3]
+console.log(arr.splice(1, 2)); // [2, 3] → arr becomes [1, 4]
+```
+
+---
+
+### **Q29. Difference between `map()`, `filter()`, and `reduce()`**
+
+| **Method** | **Purpose** | **Returns** |
+|-----------|------------|-------------|
+| `map()`   | Transform each element | New array |
+| `filter()`| Select elements matching condition | New array |
+| `reduce()`| Reduce array to single value | Any type |
+
+**Example:**
+```javascript
+const arr = [1, 2, 3, 4];
+console.log(arr.map(n => n * 2)); // [2, 4, 6, 8]
+console.log(arr.filter(n => n % 2 === 0)); // [2, 4]
+console.log(arr.reduce((sum, n) => sum + n, 0)); // 10
+```
+
+---
+
+### **Q30. `forEach()` vs `map()`**
+
+| **Aspect** | **forEach()** | **map()** |
+|-----------|---------------|-----------|
+| **Return** | ❌ undefined | ✅ New array |
+| **Use Case** | Only iterate | Transform data |
+
+```javascript
+const nums = [1, 2, 3];
+nums.forEach(n => console.log(n * 2)); // Just logs
+const doubled = nums.map(n => n * 2);
+console.log(doubled); // [2, 4, 6]
+```
+
+---
+
+### **Q31. How to flatten a nested array in JavaScript?**
+
+```javascript
+const arr = [1, [2, [3, 4]]];
+console.log(arr.flat(2)); // [1, 2, 3, 4]
+```
+
+---
+
+### **Q32. How to remove duplicates from an array?**
+
+```javascript
+const arr = [1, 2, 2, 3];
+const unique = [...new Set(arr)];
+console.log(unique); // [1, 2, 3]
+```
+
+---
+
+## **3. Advanced Array Concepts**
+
+### **Q33. Difference between shallow copy and deep copy**
+
+| **Type** | **Definition** | **Methods** |
+|---------|---------------|-------------|
+| **Shallow Copy** | Copies top-level values only | `slice()`, `concat()`, spread |
+| **Deep Copy** | Copies nested objects too | `structuredClone()`, recursion |
+
+---
+
+### **Q34. Spread operator to clone arrays**
+
+```javascript
+const arr = [1, 2, 3];
+const clone = [...arr];
+console.log(clone);
+```
+
+---
+
+### **Q35. Difference between `find()` and `filter()`**
+
+| **Aspect** | **find()** | **filter()** |
+|-----------|------------|--------------|
+| **Return** | First matching element | All matching elements |
+| **Return Type** | Single value | Array |
+
+```javascript
+const nums = [1, 2, 3, 4];
+console.log(nums.find(n => n > 2)); // 3
+console.log(nums.filter(n => n > 2)); // [3, 4]
+```
+
+---
+
+### **Q36. What is `Array.from()` and `Array.of()`?**
+
+```javascript
+console.log(Array.from("hello")); // ['h','e','l','l','o']
+console.log(Array.of(1, 2, 3));   // [1, 2, 3]
+```
+
+---
+
+## **4. Functions — Advanced Interview Questions**
+
+### **Q37. What are higher-order functions?**
+
+Functions that **take other functions as arguments** or **return functions**.
+
+```javascript
+function greet(name) {
+  return () => console.log(`Hello, ${name}`);
+}
+const sayHi = greet("Chirag");
+sayHi(); // Hello, Chirag
+```
+
+---
+
+### **Q38. What are callback functions?**
+
+A function passed as an **argument** to another function.
+
+```javascript
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data fetched!");
+  }, 1000);
+}
+fetchData(console.log); // Data fetched!
+```
+
+---
+
+### **Q39. What is a closure?**
+
+A closure is a function that **remembers variables** from its **outer scope**.
+
+```javascript
+function outer() {
+  let count = 0;
+  return function inner() {
+    return ++count;
+  };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+```
+
+---
+
+### **Q40. What is function currying?**
+
+Transforming a function with **multiple arguments** into a **series of functions**.
+
+```javascript
+function sum(a) {
+  return function(b) {
+    return function(c) {
+      return a + b + c;
+    };
+  };
+}
+console.log(sum(1)(2)(3)); // 6
+```
+
+---
+
+### **Q41. What is memoization?**
+
+Memoization caches function results to **improve performance**.
+
+```javascript
+function fibonacci(n, cache = {}) {
+  if (n <= 1) return n;
+  if (cache[n]) return cache[n];
+  cache[n] = fibonacci(n-1, cache) + fibonacci(n-2, cache);
+  return cache[n];
+}
+console.log(fibonacci(10)); // 55
+```
+
+---
+
+### **Q42. Difference between `call()`, `apply()`, and `bind()`**
+
+| **Method** | **Usage** | **Arguments** |
+|-----------|-----------|---------------|
+| `call()`  | Calls immediately | Arguments passed **individually** |
+| `apply()` | Calls immediately | Arguments passed as **array** |
+| `bind()`  | Returns new function | Arguments passed individually |
+
+**Example:**
+```javascript
+function greet(msg) {
+  console.log(`${msg}, ${this.name}`);
+}
+const user = { name: "Chirag" };
+
+greet.call(user, "Hello");       // Hello, Chirag
+greet.apply(user, ["Hi"]);       // Hi, Chirag
+const bound = greet.bind(user, "Hey");
+bound();                         // Hey, Chirag
+```
 
