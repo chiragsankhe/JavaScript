@@ -307,3 +307,153 @@ start();
 ```
 start() → greet() → console.log → pop → console.log → pop → empty
 ```
+---  
+
+# 🟢 JavaScript Interview Q&A — Operators & Data Types
+
+## **Q11. Difference between `==` and `===` in JavaScript**
+
+| **Aspect**       | **`==` (Loose Equality)**    | **`===` (Strict Equality)** |
+|------------------|------------------------------|-----------------------------|
+| **Comparison**   | Compares **values only**     | Compares **values + types** |
+| **Type Coercion**| ✅ Performs type conversion   | ❌ No type conversion       |
+| **Use Case**     | When types can be different  | When both must match        |
+
+**Example:**
+```javascript
+console.log(5 == "5");  // true  → converts string to number
+console.log(5 === "5"); // false → types differ
+console.log(null == undefined);  // true
+console.log(null === undefined); // false
+```
+
+---
+
+## **Q12. What are truthy and falsy values in JavaScript?**
+
+In JavaScript, some values **evaluate to false** in boolean contexts (**falsy**), and everything else is **truthy**.
+
+### **Falsy Values** 😵
+- `false`
+- `0`
+- `""` (empty string)
+- `null`
+- `undefined`
+- `NaN`
+
+### **Truthy Values** 😎
+- `"hello"`
+- `1`, `-1`, `3.14`
+- `[]` (empty array)
+- `{}` (empty object)
+- `function(){}`
+
+**Example:**
+```javascript
+if ("Chirag") console.log("Truthy!"); // ✅ Executes
+if (0) console.log("Falsy!");        // ❌ Skipped
+```
+
+---
+
+## **Q13. Difference between `null`, `undefined`, and `NaN`**
+
+| **Aspect**   | **null**                     | **undefined**                   | **NaN**             |
+|-------------|-------------------------------|---------------------------------|---------------------|
+| **Meaning** | Intentional absence of value | Declared but not assigned       | Invalid number      |
+| **Type**    | `object` (bug)               | `undefined`                     | `number`            |
+| **Example** | `let x = null;`              | `let y; console.log(y);`        | `"abc" * 2 // NaN`  |
+
+**Example:**
+```javascript
+let x = null;
+let y;
+let z = "abc" * 2;
+
+console.log(x); // null
+console.log(y); // undefined
+console.log(z); // NaN
+```
+
+---
+
+## **Q14. What are JavaScript template literals?**
+
+Template literals (introduced in **ES6**) allow:
+- **String interpolation**
+- **Multi-line strings**
+
+**Syntax:** Use **backticks** `` ` ``
+
+**Example:**
+```javascript
+const name = "Chirag";
+const age = 22;
+
+console.log(`Hello, my name is ${name} and I'm ${age} years old.`);
+// Hello, my name is Chirag and I'm 22 years old
+
+console.log(`This is
+a multi-line
+string!`);
+```
+
+---
+
+## **Q15. Explain spread and rest operators with examples**
+
+### **1. Spread Operator (`...`)**
+Used to **expand** arrays, objects, or strings.
+
+```javascript
+let arr = [1, 2, 3];
+let newArr = [...arr, 4, 5];
+console.log(newArr); // [1, 2, 3, 4, 5]
+
+let obj = {name: "Chirag", age: 22};
+let newObj = {...obj, country: "India"};
+console.log(newObj); // {name: "Chirag", age: 22, country: "India"}
+```
+
+---
+
+### **2. Rest Operator (`...`)**
+Used to **collect multiple values** into a single variable.
+
+```javascript
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+```
+
+---
+
+## **Q16. What is destructuring assignment in JavaScript?**
+
+Destructuring allows you to **unpack values** from arrays or objects into separate variables.
+
+### **Array Destructuring**
+```javascript
+const arr = [1, 2, 3];
+const [a, b, c] = arr;
+
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // 3
+```
+
+### **Object Destructuring**
+```javascript
+const user = { name: "Chirag", age: 22 };
+const { name, age } = user;
+
+console.log(name); // Chirag
+console.log(age);  // 22
+```
+
+### **Default Values**
+```javascript
+const [x, y = 5] = [10];
+console.log(x, y); // 10 5
+```
