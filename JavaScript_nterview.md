@@ -924,4 +924,138 @@ greet.apply(user, ["Hi"]);       // Hi, Chirag
 const bound = greet.bind(user, "Hey");
 bound();                         // Hey, Chirag
 ```
+---
+
+
+# 🟢 JavaScript Interview Q&A — DOM Manipulation
+
+---
+
+## **Q43. What is the DOM in JavaScript?**
+
+**DOM (Document Object Model)** is a programming interface for HTML and XML documents. It represents the structure of a webpage as a **tree of objects**, allowing JavaScript to manipulate elements, styles, and content dynamically.
+
+**Example:**
+```javascript
+console.log(document.title); // Prints the page title
+console.log(document.body);  // Accesses the <body> element
+```
+
+---
+
+## **Q44. How do you select elements in JavaScript?**
+
+There are several methods to **select HTML elements**:
+
+```javascript
+// By ID
+const title = document.getElementById("title");
+
+// By class name
+const items = document.getElementsByClassName("item");
+
+// By tag name
+const paragraphs = document.getElementsByTagName("p");
+
+// Using query selectors (most recommended)
+const btn = document.querySelector(".btn");     // First matching element
+const allBtns = document.querySelectorAll(".btn"); // All matching elements
+```
+
+✅ **Best Practice** → Use `querySelector` and `querySelectorAll` as they are **flexible** and **modern**.
+
+---
+
+## **Q45. Difference between `innerHTML`, `innerText`, and `textContent`**
+
+| **Property**     | **Description**                     | **Keeps HTML tags?** | **Includes hidden text?** |
+|-------------------|-----------------------------------|------------------------|-----------------------------|
+| `innerHTML`       | Returns/sets HTML **with tags**    | ✅ Yes | ✅ Yes |
+| `innerText`       | Returns visible text only          | ❌ No  | ❌ No |
+| `textContent`     | Returns all text (including hidden)| ❌ No  | ✅ Yes |
+
+**Example:**
+```html
+<p id="demo"><b>Hello</b> World!</p>
+```
+```javascript
+const demo = document.getElementById("demo");
+console.log(demo.innerHTML);   // "<b>Hello</b> World!"
+console.log(demo.innerText);   // "Hello World!"
+console.log(demo.textContent); // "Hello World!"
+```
+
+---
+
+## **Q46. How do you create, add, and remove HTML elements dynamically using JavaScript?**
+
+### **Creating and Adding Elements**
+```javascript
+const div = document.createElement("div");
+div.textContent = "Hello Chirag!";
+div.classList.add("box");
+document.body.appendChild(div);
+```
+
+### **Removing Elements**
+```javascript
+const element = document.getElementById("demo");
+element.remove();  // Modern way
+// OR
+element.parentNode.removeChild(element); // Older way
+```
+
+---
+
+## **Q47. What is event bubbling and event capturing?**
+
+When an event occurs on an element, it **propagates** in two possible phases:
+
+| **Phase**       | **Description** |
+|------------------|------------------|
+| **Event Bubbling** (default) | The event **starts from the target** element and bubbles **up** to its ancestors. |
+| **Event Capturing** | The event **starts from the root** and **trickles down** to the target element. |
+
+**Example:**
+```javascript
+document.getElementById("child").addEventListener("click", () => {
+  console.log("Child clicked");
+});
+
+document.getElementById("parent").addEventListener("click", () => {
+  console.log("Parent clicked");
+});
+```
+- **Default behavior** → Bubbling (`child → parent → document`)
+- To enable capturing:
+```javascript
+element.addEventListener("click", handler, true);
+```
+
+---
+
+## **Q48. How does event delegation work?**
+
+**Event delegation** is a technique where we attach a **single event listener** to a **parent element** instead of multiple child elements.  
+It works because of **event bubbling**.
+
+**Example:**
+```html
+<ul id="list">
+  <li>Apple</li>
+  <li>Mango</li>
+  <li>Banana</li>
+</ul>
+```
+```javascript
+document.getElementById("list").addEventListener("click", function(event) {
+  if (event.target.tagName === "LI") {
+    console.log("You clicked:", event.target.textContent);
+  }
+});
+```
+
+✅ **Why use it?**
+- Better **performance** (fewer listeners)
+- Handles **dynamic elements** automatically
 
