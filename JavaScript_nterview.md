@@ -142,3 +142,168 @@ Write a polyfill for Array.map().
 Implement a simple promise.
 
 Explain flattening a nested array.
+---
+---
+---
+
+# JavaScript Interview Questions & Answers — Basics
+
+## Q1. What is JavaScript?
+JavaScript is a **high-level**, **interpreted**, **lightweight**, and **dynamic** programming language used to create **interactive** and **dynamic** web pages.  
+It is one of the **core technologies** of the web along with **HTML** and **CSS**.
+
+**Example:**
+```javascript
+console.log("Hello Chirag!"); // Prints message to console
+```
+
+---
+
+## Q2. Difference between Java and JavaScript
+
+| **Aspect**         | **Java**                              | **JavaScript**                     |
+|---------------------|--------------------------------------|-------------------------------------|
+| **Type**           | Object-Oriented Programming Language | Scripting Language                |
+| **Compilation**    | Compiled → Bytecode (runs on JVM)     | Interpreted → Runs in browser      |
+| **Usage**          | Backend, Android, Desktop Apps       | Frontend + Backend (Node.js)       |
+| **Typing**         | Statically Typed                     | Dynamically Typed                 |
+| **Relation**       | No relation, just marketing naming   | No relation                        |
+
+> Java and JavaScript are **not related** despite the similar names.
+
+---
+
+## Q3. Why is JavaScript called a client-side scripting language?
+Because JavaScript code runs **inside the browser** on the **client’s machine**, not the server.  
+It allows developers to manipulate HTML and CSS directly.
+
+**Example:**
+```javascript
+document.getElementById("demo").innerHTML = "Client-side executed!";
+```
+
+---
+
+## Q4. What are the features of JavaScript?
+- ✅ **Lightweight & Fast** → Runs directly in browsers.
+- ✅ **Cross-platform** → Works on all major browsers.
+- ✅ **Event-driven** → Responds to user actions.
+- ✅ **Versatile** → Used in **frontend**, **backend**, **mobile**, and **desktop apps**.
+- ✅ **Object-oriented** → Uses **prototypes**.
+- ✅ **Asynchronous** → Handles API calls without blocking UI.
+
+---
+
+## Q5. What are the limitations of JavaScript?
+- ❌ **Security** → JS code is visible and can be tampered.
+- ❌ **No direct file access** for security reasons.
+- ❌ **Single-threaded** → Executes one task at a time.
+- ❌ **Browser dependency** → Behavior may vary.
+- ❌ **Not suitable for heavy computation**.
+
+---
+
+## Q6. Difference between `var`, `let`, and `const`
+
+| Feature          | **var**                | **let**                   | **const**               |
+|-------------------|------------------------|----------------------------|--------------------------|
+| **Scope**         | Function-scoped        | Block-scoped              | Block-scoped             |
+| **Re-declaration**| ✅ Allowed            | ❌ Not allowed             | ❌ Not allowed           |
+| **Re-assignment** | ✅ Allowed            | ✅ Allowed                | ❌ Not allowed          |
+| **Hoisting**      | ✅ Hoisted (undefined) | ✅ Hoisted (TDZ*)         | ✅ Hoisted (TDZ*)        |
+
+> **TDZ** = Temporal Dead Zone
+
+**Example:**
+```javascript
+var x = 10;
+var x = 20; // ✅ Allowed
+
+let y = 10;
+// let y = 20; ❌ Error
+y = 30; // ✅ Allowed
+
+const z = 10;
+// z = 20; ❌ Error
+```
+
+---
+
+## Q7. What are primitive and non-primitive data types in JavaScript?
+
+### **Primitive Data Types** (Immutable)
+- Number
+- String
+- Boolean
+- Undefined
+- Null
+- Symbol
+- BigInt
+
+### **Non-Primitive Data Types** (Mutable)
+- Objects
+- Arrays
+- Functions
+
+**Example:**
+```javascript
+let arr = [1, 2, 3];
+let obj = { name: "Chirag" };
+```
+
+---
+
+## Q8. Explain type coercion in JavaScript
+Type coercion is the **automatic** or **explicit** conversion of one data type into another.
+
+### **Implicit Coercion**
+```javascript
+console.log("5" + 2);  // "52" → Number to String
+console.log("5" - 2);  // 3    → String to Number
+```
+
+### **Explicit Coercion**
+```javascript
+console.log(Number("123")); // 123
+console.log(String(456));   // "456"
+```
+
+---
+
+## Q9. What is NaN in JavaScript?
+`NaN` stands for **Not-a-Number**. It represents invalid numeric results.
+
+**Example:**
+```javascript
+console.log(0 / 0);       // NaN
+console.log("abc" * 2);   // NaN
+console.log(isNaN("hi")); // true
+```
+
+> **Note:** `typeof NaN` → `"number"`.
+
+---
+
+## Q10. How does JavaScript execution work? (Call Stack + JS Engine)
+JavaScript runs on a **single-threaded** engine, meaning one task at a time.
+
+### **Steps:**
+1. **Parsing** → Code is parsed.
+2. **Memory Creation Phase** → Variables & functions stored.
+3. **Execution Phase** → Code runs line by line.
+
+### **Call Stack Example**
+```javascript
+function greet() {
+  console.log("Hello");
+}
+function start() {
+  greet();
+  console.log("Welcome Chirag!");
+}
+start();
+```
+**Call Stack Order:**
+```
+start() → greet() → console.log → pop → console.log → pop → empty
+```
