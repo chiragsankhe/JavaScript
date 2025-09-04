@@ -1225,3 +1225,322 @@ console.log(y); // 2
 ```
 
 ---
+
+
+# 🟢 JavaScript Interview Q&A — ES6+, Error Handling & Advanced Topics
+
+---
+
+## **ES6+ (Modern JavaScript)**
+
+### **Q61. What are the new features introduced in ES6?**
+
+Some key **ES6 features**:
+- `let` & `const`
+- Template literals
+- Default parameters
+- Arrow functions
+- Destructuring (arrays & objects)
+- Spread & rest operators
+- Modules (`import` & `export`)
+- Classes
+- Promises
+- Symbols
+- Generators
+
+---
+
+### **Q62. Explain default parameters in functions.**
+
+Default parameters allow you to **set default values** for function arguments.
+
+**Example:**
+```javascript
+function greet(name = "Guest") {
+  console.log(`Hello, ${name}!`);
+}
+
+greet();           // Hello, Guest!
+greet("Chirag");   // Hello, Chirag!
+```
+
+---
+
+### **Q63. What are modules in JavaScript (import & export)?**
+
+Modules allow you to **split code into multiple files** and **reuse** them.
+
+**Example:**  
+`math.js`
+```javascript
+export const add = (a, b) => a + b;
+export const sub = (a, b) => a - b;
+```
+
+`app.js`
+```javascript
+import { add, sub } from './math.js';
+
+console.log(add(5, 3)); // 8
+console.log(sub(5, 3)); // 2
+```
+
+---
+
+### **Q64. What are generators in JavaScript?**
+
+Generators are **special functions** that can **pause** and **resume** execution using `yield`.
+
+**Example:**
+```javascript
+function* counter() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = counter();
+console.log(gen.next().value); // 1
+console.log(gen.next().value); // 2
+console.log(gen.next().value); // 3
+```
+
+---
+
+### **Q65. What are symbols in JavaScript?**
+
+- A `Symbol` is a **unique and immutable** primitive value.
+- Commonly used as **object property keys** to avoid conflicts.
+
+**Example:**
+```javascript
+const id = Symbol("id");
+const user = { name: "Chirag", [id]: 123 };
+
+console.log(user[id]); // 123
+```
+
+---
+
+## **Error Handling**
+
+### **Q66. How do you handle errors in JavaScript?**
+
+We use **try...catch...finally**:
+
+```javascript
+try {
+  let result = JSON.parse("{ invalid json }");
+} catch (error) {
+  console.error("Error:", error.message);
+} finally {
+  console.log("Always executed");
+}
+```
+
+---
+
+### **Q67. Difference between try…catch and throw in JavaScript**
+
+| **Aspect**       | **try...catch**             | **throw**                      |
+|-------------------|-----------------------------|--------------------------------|
+| **Purpose**       | Handles runtime errors      | Manually throws errors         |
+| **Usage**         | Wrap risky code             | Used inside `try` or functions |
+
+**Example:**
+```javascript
+function divide(a, b) {
+  if (b === 0) throw new Error("Division by zero!");
+  return a / b;
+}
+
+try {
+  console.log(divide(10, 0));
+} catch (e) {
+  console.error(e.message); // Division by zero!
+}
+```
+
+---
+
+### **Q68. What are JavaScript runtime errors vs syntax errors?**
+
+| **Type**      | **When it occurs**           | **Example**         |
+|--------------|------------------------------|----------------------|
+| **Syntax**   | During parsing               | `const = 5` ❌ |
+| **Runtime**  | During execution             | `undefinedFunc()` ❌ |
+
+---
+
+## **Advanced Topics**
+
+### **Q69. What is closure in JavaScript? (with example)**
+
+A **closure** is formed when an **inner function** accesses variables from its **outer function** even after the outer function has returned.
+
+**Example:**
+```javascript
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+```
+
+---
+
+### **Q70. Explain currying in JavaScript.**
+
+**Currying** transforms a function with **multiple arguments** into a **series of functions** taking one argument each.
+
+**Example:**
+```javascript
+function add(a) {
+  return function(b) {
+    return function(c) {
+      return a + b + c;
+    };
+  };
+}
+
+console.log(add(1)(2)(3)); // 6
+```
+
+---
+
+### **Q71. What is memoization?**
+
+**Memoization** is a technique to **cache function results** to improve performance.
+
+**Example:**
+```javascript
+function memoize(fn) {
+  const cache = {};
+  return function(num) {
+    if (cache[num]) return cache[num];
+    const result = fn(num);
+    cache[num] = result;
+    return result;
+  };
+}
+
+const square = memoize(x => x * x);
+console.log(square(4)); // 16 (calculated)
+console.log(square(4)); // 16 (cached)
+```
+
+---
+
+### **Q72. What is debouncing and throttling? (with example)**
+
+#### **Debouncing** → Delays execution until user stops triggering events.
+
+```javascript
+function debounce(fn, delay) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+window.addEventListener("resize", debounce(() => {
+  console.log("Resized!");
+}, 500));
+```
+
+#### **Throttling** → Ensures function runs **at most once** in a given time.
+
+```javascript
+function throttle(fn, limit) {
+  let last = 0;
+  return function(...args) {
+    const now = Date.now();
+    if (now - last >= limit) {
+      last = now;
+      fn.apply(this, args);
+    }
+  };
+}
+
+window.addEventListener("scroll", throttle(() => {
+  console.log("Scrolled!");
+}, 500));
+```
+
+---
+
+### **Q73. Difference between prototype and __proto__**
+
+| **Aspect**   | **prototype**                     | **__proto__**                |
+|-------------|-----------------------------------|-------------------------------|
+| **Type**    | Property of **constructor**        | Property of **object**        |
+| **Usage**   | Used to define shared methods      | Points to constructor's prototype |
+| **Example** | `Function.prototype`               | `obj.__proto__`               |
+
+**Example:**
+```javascript
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.greet = function() {
+  console.log("Hello " + this.name);
+};
+
+const chirag = new Person("Chirag");
+chirag.greet(); // Hello Chirag
+
+console.log(chirag.__proto__ === Person.prototype); // true
+```
+
+---
+
+### **Q74. Explain call, apply, and bind methods.**
+
+| **Method** | **Usage**                | **Arguments**                 |
+|-----------|--------------------------|--------------------------------|
+| `call()`  | Calls function immediately | Pass args **individually**    |
+| `apply()` | Calls function immediately | Pass args as **array**        |
+| `bind()`  | Returns **new function**   | Pass args later               |
+
+**Example:**
+```javascript
+function greet(city, country) {
+  console.log(`Hello ${this.name} from ${city}, ${country}`);
+}
+
+const user = { name: "Chirag" };
+
+greet.call(user, "Mumbai", "India");
+greet.apply(user, ["Mumbai", "India"]);
+const boundGreet = greet.bind(user, "Mumbai", "India");
+boundGreet();
+```
+
+---
+
+### **Q75. What are higher-order functions in JavaScript?**
+
+A **higher-order function** is a function that:
+- Takes another function as an argument, OR
+- Returns another function.
+
+**Example:**
+```javascript
+function higherOrder(fn) {
+  return function(x) {
+    return fn(x) * 2;
+  };
+}
+
+const double = higherOrder(x => x + 5);
+console.log(double(10)); // 30
+```
+
+---
