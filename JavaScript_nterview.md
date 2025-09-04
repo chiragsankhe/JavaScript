@@ -457,3 +457,166 @@ console.log(age);  // 22
 const [x, y = 5] = [10];
 console.log(x, y); // 10 5
 ```
+---
+
+# 🟢 JavaScript Interview Q&A — Functions & Scope
+
+## **Q17. Difference between function declaration and function expression**
+
+| **Aspect**               | **Function Declaration**         | **Function Expression**         |
+|--------------------------|-----------------------------------|----------------------------------|
+| **Definition**           | Defines a named function         | Assigns a function to a variable |
+| **Hoisting**             | ✅ Hoisted (can be called before definition) | ❌ Not hoisted (must define first) |
+| **Syntax**               | `function add(a,b){...}`         | `const add = function(a,b){...}` |
+
+**Example:**
+```javascript
+// Function Declaration
+console.log(sum(5, 3)); // ✅ Works due to hoisting
+function sum(a, b) {
+  return a + b;
+}
+
+// Function Expression
+const multiply = function(a, b) {
+  return a * b;
+};
+console.log(multiply(5, 3)); // ✅ Works
+```
+
+---
+
+## **Q18. What are arrow functions?**
+
+Arrow functions (introduced in **ES6**) provide a shorter syntax for writing functions and **do not bind their own `this`**.
+
+**Syntax:**
+```javascript
+const add = (a, b) => a + b;
+console.log(add(5, 3)); // 8
+```
+
+**Key Features:**
+- Shorter syntax
+- No own `this` → takes `this` from its surrounding scope
+- Cannot be used as constructors
+
+**Example showing `this` behavior:**
+```javascript
+const obj = {
+  value: 10,
+  normalFunc: function() {
+    console.log(this.value); // 10
+  },
+  arrowFunc: () => {
+    console.log(this.value); // undefined (takes `this` from outer scope)
+  }
+};
+obj.normalFunc();
+obj.arrowFunc();
+```
+
+---
+
+## **Q19. What is IIFE (Immediately Invoked Function Expression)?**
+
+An **IIFE** is a function that executes immediately after it is defined.
+
+**Syntax:**
+```javascript
+(function() {
+  console.log("IIFE executed!");
+})(); // Output: IIFE executed!
+```
+
+**Use Cases:**
+- Avoids polluting the global scope
+- Creates a private scope
+
+**Example:**
+```javascript
+const counter = (function() {
+  let count = 0;
+  return function() {
+    return ++count;
+  };
+})();
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+```
+
+---
+
+## **Q20. Explain scope and lexical scope in JavaScript**
+
+### **Scope**
+Scope defines **where variables are accessible**.
+
+- **Global Scope** → Accessible everywhere
+- **Function Scope** → Accessible only inside the function
+- **Block Scope** → `let` & `const` variables are restricted to `{}` blocks
+
+### **Lexical Scope**
+Inner functions can access variables defined in their **outer functions**.
+
+**Example:**
+```javascript
+function outer() {
+  let outerVar = "I am outer";
+  function inner() {
+    console.log(outerVar); // ✅ Can access outerVar
+  }
+  inner();
+}
+outer();
+```
+
+---
+
+## **Q21. What is hoisting in JavaScript?**
+
+**Hoisting** is JavaScript's behavior of **moving variable and function declarations to the top** of their scope during compilation.
+
+### **Function Hoisting**
+```javascript
+sayHello(); // ✅ Works due to hoisting
+function sayHello() {
+  console.log("Hello Chirag!");
+}
+```
+
+### **Variable Hoisting**
+```javascript
+console.log(a); // undefined (not ReferenceError)
+var a = 10;
+
+// But `let` and `const` are not hoisted the same way:
+console.log(b); // ❌ ReferenceError
+let b = 20;
+```
+
+---
+
+## **Q22. Difference between global scope and block scope**
+
+| **Aspect**         | **Global Scope**         | **Block Scope**            |
+|---------------------|-------------------------|-----------------------------|
+| **Definition**     | Accessible everywhere   | Accessible only within `{}` |
+| **Declared With**  | `var` (before ES6)       | `let` & `const` (ES6+)      |
+| **Example**        |                         |                             |
+
+**Example:**
+```javascript
+// Global Scope
+var globalVar = "I am global";
+console.log(globalVar); // ✅ Accessible
+
+// Block Scope
+if (true) {
+  let blockVar = "I am block scoped";
+  console.log(blockVar); // ✅ Accessible
+}
+console.log(blockVar); // ❌ ReferenceError
+```
+
