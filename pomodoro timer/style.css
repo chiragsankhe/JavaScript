@@ -1,0 +1,61 @@
+.container {
+    margin: 40px;
+    height: 100%;
+    padding: 50px;
+    background-color: rgb(199, 179, 218);
+    text-align: center;
+    border-radius: 40px;
+    text-transform: uppercase;
+}
+
+.title {
+    color: rgb(107, 15, 117);
+    font-family: 'Times New Roman', Times, serif;
+    font-style: initial;
+    font-size: 50px;
+}
+
+.timer {
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#start {
+    background-color: rgb(101, 232, 101);
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#start:hover {
+    background-color: rgb(17, 103, 17);
+    color: white;
+}
+
+#stop {
+    background-color: rgb(243, 18, 18);
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    height: 70px;
+}
+
+#stop:hover {
+    background-color: rgb(138, 10, 19);
+    color: white;
+}
+
+#reset {
+    background-color: rgb(182, 178, 178);
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#reset:hover {
+    background-color: rgb(62, 61, 61);
+    color: rgb(247, 243, 243);
+}

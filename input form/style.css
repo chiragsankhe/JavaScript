@@ -1,0 +1,26 @@
+#header {
+    height: 70px;
+    background-color: grey;
+    text-align: center;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#header:hover {
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+#form1 {
+    margin-top: 10px;
+    background-color: rgb(231, 149, 212);
+    padding: 10px 0 10px 20px;
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10px;
+    display: none;
+}
