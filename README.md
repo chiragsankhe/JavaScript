@@ -2196,6 +2196,88 @@ Data fetched
 Displaying data
 ```
 + The fetchData function performs an asynchronous task (fetching data), and when it's done, it calls the displayData function, which is passed as a callback.
+# Sync vs Async in JavaScript
+
+## 🔹 Synchronous (Sync) Code
+- Runs **line by line, top to bottom**.
+- The **next line waits** until the previous line finishes.
+- Simple, predictable, but **blocks everything**.
+
+### Example:
+```js
+console.log("1. Start");
+
+for (let i = 0; i < 1e9; i++) {
+    // heavy work (takes time)
+}
+
+console.log("2. End");
+```
+
+If the loop takes 3 seconds, your entire page **freezes for 3 seconds** → no button clicks, no typing, no animations.
+
+---
+
+## 🔹 Asynchronous (Async) Code
+- Doesn’t block other tasks.
+- If something takes time (like fetching from API, timers, database), JS will wait in the background while other code runs.
+
+### Example:
+```js
+console.log("1. Start");
+
+setTimeout(() => {
+    console.log("2. Timer done!");
+}, 3000);
+
+console.log("3. End");
+```
+
+### Output:
+```
+1. Start
+3. End
+2. Timer done!
+```
+
+Notice how code **didn’t freeze** for 3 seconds.
+
+---
+
+## 🔹 Why Async is Better in Real Life
+- **Web Apps:** UI stays responsive (no freezing while waiting for API).  
+- **Servers (Node.js):** Can handle thousands of users at once without blocking.  
+- **User Experience:** Smooth apps with loaders, animations, partial results.
+
+---
+
+## 🔹 Rule of Thumb
+- Use **sync** for small, instant operations (math, loops, DOM updates).  
+- Use **async** for long/uncertain operations (API calls, file I/O, DB queries, timers).  
+
+---
+
+## ⚡ Example: Pokémon Fetch (Sync vs Async)
+
+### If Sync existed for fetch (old browsers):
+```js
+let response = fetch("https://pokeapi.co/api/v2/pokemon/pikachu", { sync: true });
+console.log(response.json());
+```
+❌ Page freezes until server responds.
+
+### With Async (modern way):
+```js
+const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+const data = await response.json();
+console.log(data);
+```
+✅ App stays responsive while waiting.
+
+---
+
+## ✅ Conclusion
+We use **async** not because it’s "simpler," but because it makes apps **faster, smoother, and non-blocking** for users.
 
  ### Callback Functions in Practice:
 + `Event Handling`: Callbacks are used when handling events like button clicks or form submissions in JavaScript.
